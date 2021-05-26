@@ -1,0 +1,111 @@
+version: 2.1
+parameters:
+  # Pipeline level parameters used to indicate which workflow(s) to run
+  trigger:
+    description: |
+      `trigger` will be `true` for all automatically triggered CI runs. It will then make API calls
+      back to CircleCI with the `trigger` parameter set to `false`, and the parameters for
+      the other workflows that need to be ran set to `true`.
+    type: boolean
+    default: true
+  frontend:
+    description: |
+      `frontend` will be `false` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the frontend workflow.
+    type: boolean
+    default: false
+  auth:
+    description: |
+      `auth` will be `false` for all automatically triggered CI runs. The parameter will need to be
+      explicitly set in order to trigger the auth service workflow.
+    type: boolean
+    default: false
+  api-gateway:
+    description: |
+      `api-gateway` will be `false` for all automatically triggered CI runs. The parameter will need
+      to be explicitly set in order to trigger the API gateway workflow.
+    type: boolean
+    default: false
+  profile:
+    description: |
+      `profile` will be `false` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the profile service workflow.
+    type: boolean
+    default: false
+  assessment:
+    description: |
+      `assessment` will be `false` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the assessment service workflow.
+    type: boolean
+    default: false
+  notification:
+    description: |
+      `notification` will be `false` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the assessment service workflow.
+    type: boolean
+    default: false
+  integration:
+    description: |
+      `integration` will be `false` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the assessment service workflow.
+    type: boolean
+    default: false
+  browser-testing-env:
+    description: |
+      `browser-testing-env` will be `""` for all automatically triggered CI runs. The parameter will need to
+      be explicitly set in order to trigger the browser testing automation workflow on the defined environment 
+      with the defined browser.
+    type: enum
+    enum: ["local", "dev", "stage", "prod", "none"]
+    default: none
+  browser:
+    description: |
+      `browser` will be used with the browser testing to determin which browser(s) will be used for the testing
+    type: enum
+    enum: ["chrome", "firefox", "edge", "safari", "all"]
+    default: chrome
+jobs:
+  browser-testing:
+    parameters:
+      env:
+        description: The environment to run the test suite against
+        type: string
+      browser:
+        description: Which browser will the the test be ran on
+        type: string
+        default: chrome
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo << pipeline.parameters.browser-testing-env >>
+      - run: echo << pipeline.parameters.browser >>
+workflows:
+  single-browser-testing:
+    # Run automated browser testing using a specific browser
+    when:
+      and:
+        - not:
+            equal: [ none, << pipeline.parameters.browser-testing-env >> ]
+        - not:
+            equal: [ all, << pipeline.parameters.browser >> ]
+    jobs:
+      - browser-testing:
+          env: << pipeline.parameters.browser-testing-env >>
+          browser: << pipeline.parameters.browser >>
+  multi-browser-testing:
+    # Run automated browser testing accross all supported browsers
+    when:
+      and:
+        - not:
+            equal: [ none, << pipeline.parameters.browser-testing-env >> ]
+        - equal: [ all, << pipeline.parameters.browser >> ]
+    jobs:
+      - browser-testing:
+          env: << pipeline.parameters.browser-testing-env >>
+          browser: chrome
+      - browser-testing:
+          env: << pipeline.parameters.browser-testing-env >>
+          browser: firefox
+      - browser-testing:
+          env: << pipeline.parameters.browser-testing-env >>
+          browser: edge
