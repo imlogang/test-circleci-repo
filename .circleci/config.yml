@@ -13,7 +13,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install dpkg
       - run: sudo apt-get -y install --reinstall ca-certificates
-      - run: sudo apt-get -y install unixodbc unixodbc-dev odbc-postgresql #test
+      - run: docker run --rm ubuntu:14.04.5 bash -c 'apt-key update; apt-get update; apt-get install -y odbc-postgresql'
       
       
 workfows:
