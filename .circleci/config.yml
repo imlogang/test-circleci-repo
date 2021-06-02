@@ -3,19 +3,21 @@ version: 2.1
 executors:
   cclearly-build:
     machine:
-      image: ubuntu-2004:202104-01
+      image: circleci/classic:201703-01
       
 jobs:
   build:
     executor: cclearly-build
     steps:
-      - checkout    
+      - checkout  
+      - run: docker build
+      - run: docker push
       - run: sudo apt-get update
       - run: sudo apt-get install dpkg
       - run: sudo apt-get -y install unixodbc unixodbc-dev odbc-postgresql #test
       
       
-workfows:
+workflows:
   build:
     jobs:
       - build
