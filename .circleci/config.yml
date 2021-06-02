@@ -10,8 +10,8 @@ jobs:
     executor: cclearly-build
     steps:
       - checkout  
-      - run: docker build
-      - run: docker push
+      - run: docker build --no-cache -t namespace/cool-image:latest
+      - run: docker push namespace/cool-image:latest
       - run: sudo apt-get update
       - run: sudo apt-get install dpkg
       - run: sudo apt-get -y install unixodbc unixodbc-dev odbc-postgresql #test
