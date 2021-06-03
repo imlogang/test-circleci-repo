@@ -28,11 +28,11 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
   build-2-workflow:
     jobs:
       - build2:
           filters:
             branches:
               only:
-                - master
+                - main
