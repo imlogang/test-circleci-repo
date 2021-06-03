@@ -1,3 +1,3 @@
 This is for testing customer configs
 
-*test update* teste
+*test update* tested
