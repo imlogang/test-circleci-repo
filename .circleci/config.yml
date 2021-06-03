@@ -5,16 +5,14 @@ executors:
       
 jobs:
   build1:
-    executor: 
-      docker:
-        image: circleci/node
+    docker:
+      - image: circleci/node
     steps:
       - checkout  
       - run: echo "this is build1"
-  build2:
-    executor: 
-      docker:
-        image: circleci/node
+  build2: 
+    docker:
+      - image: circleci/node
     steps:
       - checkout  
       - run: echo "this is build2"
