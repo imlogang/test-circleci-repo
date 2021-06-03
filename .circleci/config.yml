@@ -31,7 +31,7 @@ workflows:
                 - master
   build-2-workflow:
     jobs:
-      - build2
+      - build2:
           filters:
             branches:
               only:
