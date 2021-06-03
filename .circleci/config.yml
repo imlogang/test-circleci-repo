@@ -19,8 +19,20 @@ jobs:
       
 workflows:
   build-1-workflow:
+    when:
+      or:
+        - equal: ["[reset ci]", << pipeline.parameters.ci_commit_label >>]
+        - equal: ["[ci reset]", << pipeline.parameters.ci_commit_label >>]
     jobs:
-      - build1
+      - build1:
+          filters:
+            branches:
+              only:
+                - master
   build-2-workflow:
     jobs:
       - build2
+          filters:
+            branches:
+              only:
+                - master
