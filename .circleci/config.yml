@@ -1,23 +1,28 @@
 version: 2.1
 
 executors:
-  cclearly-build:
-    machine:
-      image: circleci/classic:201703-01
+
       
 jobs:
-  build:
-    executor: cclearly-build
+  build1:
+    executor: 
+      docker:
+        image: circleci/node
     steps:
       - checkout  
-      - run: docker build --no-cache -t namespace/cool-image:latest
-      - run: docker push namespace/cool-image:latest
-      - run: sudo apt-get update
-      - run: sudo apt-get install dpkg
-      - run: sudo apt-get -y install unixodbc unixodbc-dev odbc-postgresql #test
-      
+      - run: echo "this is build1"
+  build2:
+    executor: 
+      docker:
+        image: circleci/node
+    steps:
+      - checkout  
+      - run: echo "this is build2"
       
 workflows:
-  build:
+  build-1-workflow:
     jobs:
-      - build
+      build1
+  build-2-workflow:
+    jobs:
+      build2
