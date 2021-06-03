@@ -17,6 +17,11 @@ jobs:
       - checkout  
       - run: echo "this is build2"
       
+parameters:
+  ci_commit_label:
+    type: string
+    default: $CI_COMMIT_LABEL      
+      
 workflows:
   build-1-workflow:
     when:
