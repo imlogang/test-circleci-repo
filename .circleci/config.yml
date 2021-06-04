@@ -30,6 +30,8 @@ workflows:
               only:
                 - main
   build-2-workflow:
+    when:
+      not: << pipeline.parameters.ci_commit_label >>
     jobs:
       - build2:
           filters:
