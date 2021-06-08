@@ -1,20 +1,20 @@
 version: 2.1
 jobs:
-  # build_image:
-  #   machine: true
-  #   steps:
-  #     - checkout
+  build_image:
+    machine: true
+    steps:
+      - checkout
 
-  #     - run:
-  #         name: Build the image
-  #         command: docker build -t birs/proposals:latest .
-  #         no_output_timeout: 30m
+      - run:
+          name: Build the image
+          command: docker build -t birs/proposals:latest .
+          no_output_timeout: 30m
 
-  #     - run:
-  #         name: Send to DockerHub
-  #         command: |
-  #           echo $DOCKER_PASSWORD | docker login -u $DOCKER_LOGIN --password-stdin
-  #           docker push birs/proposals:latest
+      - run:
+          name: Send to DockerHub
+          command: |
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push birs/proposals:latest
 
   run_tests:
     docker:
@@ -112,25 +112,25 @@ jobs:
   #         command: bundle exec cap production deploy:remote
 
 workflows:
-  # build_new_image:
-  #   jobs:
-  #     - run_tests:
-  #         filters:
-  #           branches:
-  #             only: new_image
-  #     - build_image:
-  #         requires:
-  #           - run_tests
-  #         filters:
-  #           branches:
-  #             only: new_image
+  build_new_image:
+    jobs:
+      - run_tests:
+          filters:
+            branches:
+              only: new_image
+      - build_image:
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: new_image
 
-  # run_the_tests:
-  #   jobs:
-  #     - run_tests:
-  #         filters:
-  #           branches:
-  #             ignore: /main|releases|new_image/
+  run_the_tests:
+    jobs:
+      - run_tests:
+          filters:
+            branches:
+              ignore: /|releases|new_image/
 
   deploy_to_staging:
     jobs:
@@ -145,9 +145,9 @@ workflows:
             branches:
               only: main
 
-  # deploy_to_production:
-  #   jobs:
-  #     - deploy_to_production:
-  #         filters:
-  #           branches:
-  #             only: releases
+  deploy_to_production:
+    jobs:
+      - deploy_to_production:
+          filters:
+            branches:
+              only: releases
