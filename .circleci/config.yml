@@ -29,13 +29,9 @@ workflows:
           filters:
             branches:
               only: /.*/
-            tags:
-              only: /.*/
       - build_and_push_prd_image:
           requires:
             - build
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^v\d+\.\d+\.\d+?$/ # v1.1.1 (API Production)
+              only: cron
