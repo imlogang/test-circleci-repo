@@ -20,9 +20,57 @@ jobs:
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
+  analyse_js:
+    working_directory: ~/project/app
+    docker:
+      - image: circleci/node:lts
+    steps:
+      # Attach to the workspace created by the `build` job
+      - attach_workspace:
+          at: ~/project
+      - run: yarn lint
+      - run: yarn check:icon-declarations
+      - run: yarn check:icon-map
+      - run: yarn test
+
+  react-native-android-bundle:
+    resource_class: large
+    working_directory: ~/project/app
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: yarn react-native bundle --entry-file index.android.js --platform android --dev false --bundle-output index.android.bundle --assets-dest android-res --verbose
+  react-native-ios-bundle:
+    resource_class: large
+    working_directory: ~/project/app
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: yarn react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output index.ios.bundle --assets-dest ios-res --verbose
 
 workflows:
   version: 2
   node-tests:
     jobs:
       - build
+      - analyse_js:
+          requires:
+            - build
+      - react-native-android-bundle:
+          requires:
+            - analyse_js
+          filters:
+            branches:
+              only:
+                - main
+      - react-native-ios-bundle:
+          requires:
+            - react-native-android-bundle
+          filters:
+            branches:
+              only:
+                - main
