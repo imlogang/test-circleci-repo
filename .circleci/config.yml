@@ -28,7 +28,7 @@ workflows:
       - build:
           filters:
             branches:
-              ignore: /.*/
+              only: /.*/
             tags:
               only: /.*/
       - build_and_push_prd_image:
