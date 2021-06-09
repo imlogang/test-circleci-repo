@@ -1,149 +1,28 @@
-version: 2.1
+version: 2
 jobs:
-  # build_image:
-  #   machine: true
-  #   steps:
-  #     - checkout
-
-  #     - run:
-  #         name: Build the image
-  #         command: docker build -t birs/proposals:latest .
-  #         no_output_timeout: 30m
-
-  #     - run:
-  #         name: Send to DockerHub
-  #         command: |
-  #           echo $DOCKER_PASSWORD | docker login -u $DOCKER_LOGIN --password-stdin
-  #           docker push birs/proposals:latest
-
-  run_tests:
+  # This checks out the code, installs dependencies, and persists node_modules
+  build:
+    working_directory: ~/project/app
     docker:
-      - image: birs/proposals:latest
-        environment:
-          PG_HOST: localhost
-          PG_USER: $DB_USER
-          RAILS_ENV: test
-          RACK_ENV: test
-      - image: 'circleci/postgres:12.1-alpine-ram'
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      - image: circleci/node:lts
     steps:
-      - checkout
-      - run:
-          name: Copy code to app home
-          command: tar cvf - --exclude=".git" . | tar xf - -C /home/app/proposals/
-      - run:
-          name: Bundle install
-          command: cd /home/app/proposals; bundle install
-      - run:
-          name: Wait for database
-          command: |
-            for i in `seq 1 10`;
-            do
-              nc -z localhost 5432 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for Postgress && exit 1
-      - run:
-          name: Setup database
-          command: |
-            enable_extension "pgcrypto"
-      - run:
-          name: Run migrations
-          command: |
-            echo "127.0.0.1 db" >> /etc/hosts
-            cd /home/app/proposals
-            SECRET_KEY_BASE=token DB_USER=$DB_USER DB_PASS=$DB_PASS bin/rails db:migrate RAILS_ENV=test
-      - run:
-          name: Update permissions
-          command: chown -R app:app /home/app/proposals
-      - run:
-          name: Run the tests
-          command: cd /home/app/proposals; bundle exec rspec
-  # deploy_to_staging:
-  #   docker:
-  #     - image: birs/proposals:latest
-  #       environment:
-  #         PG_HOST: localhost
-  #         PG_USER: $DB_USER
-  #         RAILS_ENV: development
-  #         RACK_ENV: development
-  #     - image: 'circleci/postgres:12.1-alpine-ram'
-  #       environment:
-  #         POSTGRES_USER: postgres
-  #         POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-  #   steps:
-  #     - checkout
-  #     - add_ssh_keys:
-  #         fingerprints:
-  #           - "9f:15:4c:07:65:8b:14:ca:f3:68:01:0a:cf:dd:67:95"
-  #     - run:
-  #         name: Run Capistrano
-  #         command: cd /home/app/proposals; bundle exec cap staging deploy
-
-  # deploy_to_production:
-  #   docker:
-  #     - image: birs/proposals:latest
-  #       environment:
-  #         PG_HOST: localhost
-  #         PG_USER: $DB_USER
-  #         RAILS_ENV: production
-  #         RACK_ENV: production
-  #     - image: 'circleci/postgres:12.1-alpine-ram'
-  #       environment:
-  #         POSTGRES_USER: postgres
-  #         POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: Bundle install
-  #         command: bundle install
-  #     - add_ssh_keys:
-  #         fingerprints:
-  #           - "11:dc:ba:15:ec:d0:88:66:a5:fc:f3:11:bb:3e:7b:46"
-  #     - run:
-  #         name: Run Capistrano
-  #         command: bundle exec cap production deploy:remote
+      - checkout:
+          path: ~/project
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      # Save the entire `~/project/app` directory to the workspace for this run
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - app
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
 
 workflows:
-  # build_new_image:
-  #   jobs:
-  #     - run_tests:
-  #         filters:
-  #           branches:
-  #             only: new_image
-  #     - build_image:
-  #         requires:
-  #           - run_tests
-  #         filters:
-  #           branches:
-  #             only: new_image
-
-  run_the_tests:
+  version: 2
+  node-tests:
     jobs:
-      - run_tests:
-          filters:
-            branches:
-              ignore: /releases|new_image/
-
-  # deploy_to_staging:
-  #   jobs:
-  #     - run_tests:
-  #         filters:
-  #           branches:
-  #             only: main
-  #     - deploy_to_staging:
-  #         requires:
-  #           - run_tests
-  #         filters:
-  #           branches:
-  #             only: main
-
-  # deploy_to_production:
-  #   jobs:
-  #     - deploy_to_production:
-  #         filters:
-  #           branches:
-  #             only: releases
+      - build
