@@ -36,4 +36,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^x\d+\.\d+\.\d+?$/ # v1.1.1 (API Production)
+              only: /^v\d+\.\d+\.\d+?$/ # v1.1.1 (API Production)
