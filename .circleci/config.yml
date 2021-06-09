@@ -2,76 +2,38 @@ version: 2
 jobs:
   # This checks out the code, installs dependencies, and persists node_modules
   build:
-    working_directory: ~/project/app
     docker:
       - image: circleci/node:lts
     steps:
-      - checkout:
-          path: ~/project
-      - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
-      - run: git submodule init && git submodule update
-      - run: yarn install --frozen-lockfile
-      # Save the entire `~/project/app` directory to the workspace for this run
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - app
-      - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - ./node_modules
-  analyse_js:
-    working_directory: ~/project/app
+      - checkout
+      - run: echo "this is the build job"
+  build_and_push_prd_image: 
     docker:
       - image: circleci/node:lts
     steps:
-      # Attach to the workspace created by the `build` job
-      - attach_workspace:
-          at: ~/project
-      - run: yarn lint
-      - run: yarn check:icon-declarations
-      - run: yarn check:icon-map
-      - run: yarn test
-
-  react-native-android-bundle:
-    resource_class: large
-    working_directory: ~/project/app
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run: yarn react-native bundle --entry-file index.android.js --platform android --dev false --bundle-output index.android.bundle --assets-dest android-res --verbose
-  react-native-ios-bundle:
-    resource_class: large
-    working_directory: ~/project/app
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run: yarn react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output index.ios.bundle --assets-dest ios-res --verbose
+      - checkout
+      - run: echo "this is the build_and_push_prd_image job"
 
 workflows:
   version: 2
-  node-tests:
+  auto refresh:
+    triggers:
+      - schedule:
+          cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
-      - build
-      - analyse_js:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - build_and_push_prd_image:
           requires:
             - build
-      - react-native-android-bundle:
-          requires:
-            - analyse_js
           filters:
             branches:
-              only:
-                - main
-      - react-native-ios-bundle:
-          requires:
-            - react-native-android-bundle
-          filters:
-            branches:
-              only:
-                - main
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+?$/ # v1.1.1 (API Production)
