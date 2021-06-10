@@ -10,7 +10,7 @@ jobs:
       - when:
           condition:
             matches:
-              pattern: "^main*$"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              pattern: "^main"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
               value: << pipeline.git.branch >>
           steps:
             - run: echo "this is the main pipeline"
