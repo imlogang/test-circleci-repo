@@ -10,10 +10,10 @@ jobs:
       - when:
           condition:
             matches:
-              pattern: "^3\\.9*"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              pattern: "^3\\.9*$"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
               value: "3.9.4"
           steps:
-            - run: echo "this is the main pipeline"
+            - run: echo "This worked correctly 3.9.4"
   build_and_push_prd_image: 
     docker:
       - image: cimg/base:stable
