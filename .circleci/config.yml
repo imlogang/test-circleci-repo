@@ -8,12 +8,13 @@ jobs:
       - checkout
       - run: echo "this is the build job"
       - when:
-          condition:
-            matches:
-              pattern: "^main$"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
-              value: << pipeline.git.branch >>
-          steps:
-            - run: echo "this is the main pipeline"
+          and:
+            condition:
+              matches:
+                pattern: "^main$"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+                value: << pipeline.git.branch >>
+            steps:
+              - run: echo "this is the main pipeline"
   build_and_push_prd_image: 
     docker:
       - image: circleci/node:lts
