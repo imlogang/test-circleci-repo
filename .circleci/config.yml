@@ -3,20 +3,20 @@ jobs:
   # This checks out the code, installs dependencies, and persists node_modules
   build:
     docker:
-      - image: circleci/node:lts
+      - image: circleci/python:3.9.4
     steps:
       - checkout
       - run: echo "this is the build job"
       - when:
           condition:
             matches:
-              pattern: "^main"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
-              value: << pipeline.git.branch >>
+              pattern: "^3\\.9"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              value: "3.9.4"
           steps:
             - run: echo "this is the main pipeline"
   build_and_push_prd_image: 
     docker:
-      - image: circleci/node:lts
+      - image: cimg/base:stable
     steps:
       - checkout
       - run: echo "this is the build_and_push_prd_image job"
