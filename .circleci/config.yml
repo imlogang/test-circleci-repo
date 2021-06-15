@@ -11,9 +11,23 @@ jobs:
           condition:
             matches:
               pattern: "^3\\.9(.*)"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
-              value: 3.9.4.7
+              value: 3.9
           steps:
-            - run: echo "This worked correctly 3.9.4"
+            - run: echo "This worked correctly 3.9"
+      - when:
+          condition:
+            matches:
+              pattern: "^3\\.9(.*)"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              value: 3.9.1
+          steps:
+            - run: echo "This worked correctly 3.9.1"
+      - when:
+          condition:
+            matches:
+              pattern: "^3\\.9(.*)"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              value: 3.9.1.1.1
+          steps:
+            - run: echo "This worked correctly 3.9.1.1.1"
   build_and_push_prd_image: 
     docker:
       - image: cimg/base:stable
