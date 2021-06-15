@@ -10,7 +10,7 @@ jobs:
       - when:
           condition:
             matches:
-              pattern: "^3\\.9\\*"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
+              pattern: "^3\\.9*"    # can't do "^3\\.9" only due to (likely) circleci regex matching bug
               value: 3.9.45.7
           steps:
             - run: echo "This worked correctly 3.9.4"
