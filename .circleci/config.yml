@@ -1,20 +1,16 @@
 version: 2.1
-
-orbs:
-  ruby: circleci/ruby@1.1.2
-
 jobs:
-  build:
-    docker:
-      - image: 'cimg/base:stable'
+  test-and-build:
+    macos:
+      xcode: 12.4.0
     steps:
       - checkout
-      - ruby/install:
-          version: '2.4.1'
-      - run: echo "Ruby 2.4.1 has been installed"
-      - run: ruby -v
-
+      - run: xcodebuild -resolvePackageDependencies
+      - run: echo hi
+      - run: brew --version
+      - run: carthage version
 workflows:
-  run-jobs:
+  test-and-build-adhoc:
     jobs:
-      - build
+      - test-and-build
+      #tets
