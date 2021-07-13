@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: cimg/node:12.17
     steps:
+      - checkout
       - run:
         command: sudo npm install
-      - checkout
       - run: echo 'success'
       - run: |
           ls /home/circleci/.config/git
