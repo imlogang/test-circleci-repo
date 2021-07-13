@@ -2,7 +2,8 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:12.17
+      - image: cypress/base:14.15.0
+    working_directory: ~/test/test_directory
     steps:
       - run:
           command: sudo npm install
