@@ -1,21 +1,21 @@
+# Original config.yml file:
 version: 2.1
 
 orbs:
-  docker: circleci/docker@1.5.0
+  ruby: circleci/ruby@1.1.3
+  android: circleci/android@1.0.3
 
 jobs:
-  build:
+  release_android:
     docker:
-      - image: circleci/rust:latest
+      - image: circleci/android:api-29 # ruby 2.6.1
     steps:
       - checkout
-      - run: echo 'success'
-      - run: |
-          rustup toolchain install nightly
-          rustup default nightly
-          cargo build --release --all-features
+      - android/install-ndk:
+          ndk-version: android-ndk-r21e
+          # find newer versions here: https://developer.android.com/ndk/downloads
+
 workflows:
-  build:
+  release_android:
     jobs:
-      - build
-      #test
+      - release_android
