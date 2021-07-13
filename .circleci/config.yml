@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - android/install-ndk:
-          ndk-version: android-ndk-r21e
+          ndk-version: android-ndk-r19e
           # find newer versions here: https://developer.android.com/ndk/downloads
 
 workflows:
