@@ -5,7 +5,7 @@ jobs:
       - image: cimg/node:12.17
     steps:
       - run:
-        command: sudo npm install -g @cplace/cli
+        command: sudo npm install
       - checkout
       - run: echo 'success'
       - run: |
