@@ -1,22 +1,16 @@
-# Original config.yml file:
 version: 2.1
-
-orbs:
-  ruby: circleci/ruby@1.1.3
-  android: circleci/android@1.0.3
-
 jobs:
-  release_android:
+  build:
     docker:
-      - image: circleci/android:api-29 # ruby 2.6.1
+      - image: suitepad/circleci-primary-docker
     steps:
       - checkout
-      - android/install-ndk:
-          ndk-version: android-ndk-r19e
-          ndk-sha: c3ebc83c96a4d7f539bd72c241b2be9dcd29bda9
-          # find newer versions here: https://developer.android.com/ndk/downloads
-
+      - run: echo 'success'
+      - run: |
+          ls /home/circleci/.config/git
+          ls /home/circleci/.config/git/attributes
 workflows:
-  release_android:
+  build:
     jobs:
-      - release_android
+      - build
+      #test
