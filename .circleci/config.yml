@@ -13,6 +13,7 @@ jobs:
       - checkout
       - android/install-ndk:
           ndk-version: android-ndk-r19e
+          ndk-sha: c3ebc83c96a4d7f539bd72c241b2be9dcd29bda9
           # find newer versions here: https://developer.android.com/ndk/downloads
 
 workflows:
