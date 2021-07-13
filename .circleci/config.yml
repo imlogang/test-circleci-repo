@@ -5,14 +5,10 @@ jobs:
       - image: cypress/base:14.15.0
     working_directory: ~/test/test_directory
     steps:
-      - run:
-          command: sudo npm install
       - checkout
       - run: echo 'success'
       - run: |
-          ls /home/circleci/.config/git
-          ls /home/circleci/.config/git/attributes
-workflows:
+          ls
   build:
     jobs:
       - build
