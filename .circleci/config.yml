@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: sudo npm install
+          command: sudo npm install
       - run: echo 'success'
       - run: |
           ls /home/circleci/.config/git
