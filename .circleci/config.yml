@@ -2,13 +2,15 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: suitepad/circleci-primary-docker
+      - image: cimg/node:12.17
     steps:
+      - run:
+        command: sudo npm install -g @cplace/cli
       - checkout
       - run: echo 'success'
       - run: |
-          echo ls /home/circleci/.config/git
-          echo ls /home/circleci/.config/git/attributes
+          ls /home/circleci/.config/git
+          ls /home/circleci/.config/git/attributes
 workflows:
   build:
     jobs:
