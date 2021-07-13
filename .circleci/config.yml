@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo 'success'
-      - run: ls
+      - run: ls /project/
 workflows:
   build:
     jobs:
