@@ -7,8 +7,8 @@ jobs:
       - checkout
       - run: echo 'success'
       - run: |
-          ls /home/circleci/.config/git
-          ls /home/circleci/.config/git/attributes
+          echo ls /home/circleci/.config/git
+          echo ls /home/circleci/.config/git/attributes
 workflows:
   build:
     jobs:
