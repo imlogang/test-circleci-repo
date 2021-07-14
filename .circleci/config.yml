@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: cimg/node:12.17
     steps:
+      - checkout
       - run: echo 'success'
 workflows:
   build:
