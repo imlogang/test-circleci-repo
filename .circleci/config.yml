@@ -8,6 +8,7 @@ jobs:
       - run: echo 'success'
 workflows:
   build:
+    when: << pipeline.git.branch >>
     jobs:
       - build
       #test
