@@ -9,11 +9,13 @@ jobs:
       - image: cimg/android:29.0
     steps:
       - checkout
-      - ruby/install:
-          version: '2.7.3'
-      - run: echo "Ruby 2.7 has been installed"
-      - run: ruby -v
-      - run: echo 'success'
+      - run:
+          command: cd | cat $source_properties | grep Pkg.Revision | sed 's|.*= ||'
+      # - ruby/install:
+      #     version: '2.7.3'
+      # - run: echo "Ruby 2.7 has been installed"
+      # - run: ruby -v
+      # - run: echo 'success'
 workflows:
   build:
     jobs:
