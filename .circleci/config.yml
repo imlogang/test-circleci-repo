@@ -5,6 +5,12 @@ orbs:
   android: circleci/android@1.0.3
 
 jobs:
+  run_tests:
+    docker:
+      - image: cimg/android:29.0
+    steps:
+      - checkout
+      - run: echo 'tests run'
   build:
     docker:
       - image: cimg/android:29.0
@@ -18,5 +24,6 @@ jobs:
 workflows:
   build:
     jobs:
+      - run_tests
       - build
       #test 2
