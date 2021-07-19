@@ -38,8 +38,8 @@ jobs:
           if [ "./vendor/bundle" == "./vendor/bundle" ]; then
             bundle config set deployment 'true'
           fi
-          bundle config set path ./vendor/bundle
-          bundle check || bundle install
+          # bundle config set path ./vendor/bundle
+          # bundle check || bundle install
         name: 'Bundle Install '
       - run: echo 'success'
 workflows:
