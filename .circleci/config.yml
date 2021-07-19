@@ -1,14 +1,17 @@
 version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.1.4
+
 jobs:
   build:
     docker:
-      - image: cimg/node:12.17
+      - image: cimg/android:29.0
     steps:
       - checkout
       - run: echo 'success'
 workflows:
   build:
-    when: << pipeline.git.branch >>
     jobs:
       - build
       #test 2
