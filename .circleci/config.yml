@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.1.4
+  android: circleci/android@1.0.3
 
 jobs:
   build:
@@ -9,16 +10,11 @@ jobs:
       - image: cimg/android:29.0
     steps:
       - checkout
-      - run:
-          command: 
-            source_properties=$AndroidNDKRoot"/source.properties"
-            ndkv=$(sed -En -e 's/^Pkg.Revision\s*=\s*([0-9a-f]+)/r\1/p' $source_properties)
-            echo ndkv
-      # - ruby/install:
-      #     version: '2.7.3'
-      # - run: echo "Ruby 2.7 has been installed"
-      # - run: ruby -v
-      # - run: echo 'success'
+      - ruby/install:
+          version: '2.7.3'
+      - run: echo "Ruby 2.7 has been installed"
+      - run: ruby -v
+      - run: echo 'success'
 workflows:
   build:
     jobs:
