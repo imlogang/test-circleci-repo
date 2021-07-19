@@ -12,6 +12,35 @@ jobs:
       - ruby/install:
           version: '2.7'
       - run: echo "Ruby 2.7 has been installed"
+      - run:
+        command: |
+          if test -f "Gemfile.lock"; then
+            APP_BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")
+            if [ -z "$APP_BUNDLER_VERSION" ]; then
+              echo "Could not find bundler version from Gemfile.lock. Please use bundler-version parameter"
+            else
+              echo "Gemfile.lock is bundled with bundler version $APP_BUNDLER_VERSION"
+            fi
+          fi
+
+          if ! [ -z  ]; then
+            echo "Found bundler-version parameter to override"
+            APP_BUNDLER_VERSION=
+          fi
+
+          if ! echo $(bundle version)  | grep -q $APP_BUNDLER_VERSION; then
+            echo "Installing bundler $APP_BUNDLER_VERSION"
+            gem install bundler:$APP_BUNDLER_VERSION
+          else
+            echo "bundler $APP_BUNDLER_VERSION is already installed."
+          fi
+
+          if [ "./vendor/bundle" == "./vendor/bundle" ]; then
+            bundle config set deployment 'true'
+          fi
+          bundle config set path ./vendor/bundle
+          bundle check || bundle install
+        name: 'Bundle Install '
       - run: echo 'success'
 workflows:
   build:
