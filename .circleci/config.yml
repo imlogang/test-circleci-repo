@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: ruby -v
       - ruby/install:
-          version: '2.7.3'
+          version: '2.7.4'
       - run: echo "Ruby 2.7 has been installed"
       - run: ruby -v
       - run: echo 'success'
