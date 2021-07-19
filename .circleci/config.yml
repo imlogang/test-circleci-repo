@@ -8,6 +8,7 @@ jobs:
   build:
     docker:
       - image: cimg/android:29.0
+    resource_class: medium+
     steps:
       - checkout
       - ruby/install:
