@@ -10,7 +10,10 @@ jobs:
     steps:
       - checkout
       - run:
-          command: cat $source_properties | grep Pkg.Revision | sed 's|.*= ||'
+          command: 
+            alias source_properties=$AndroidNDKRoot"/source.properties"
+            alias ndkv=$(sed -En -e 's/^Pkg.Revision\s*=\s*([0-9a-f]+)/r\1/p' $source_properties)
+            echo ndkv
       # - ruby/install:
       #     version: '2.7.3'
       # - run: echo "Ruby 2.7 has been installed"
