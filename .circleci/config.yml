@@ -9,6 +9,7 @@ jobs:
       - image: cimg/android:29.0
     steps:
       - checkout
+      - run: ruby -v
       - ruby/install:
           version: '2.7'
       - run: echo "Ruby 2.7 has been installed"
