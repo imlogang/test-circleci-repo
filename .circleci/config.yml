@@ -11,8 +11,8 @@ jobs:
       - checkout
       - run:
           command: 
-            alias source_properties=$AndroidNDKRoot"/source.properties"
-            alias ndkv=$(sed -En -e 's/^Pkg.Revision\s*=\s*([0-9a-f]+)/r\1/p' $source_properties)
+            source_properties=$AndroidNDKRoot"/source.properties"
+            ndkv=$(sed -En -e 's/^Pkg.Revision\s*=\s*([0-9a-f]+)/r\1/p' $source_properties)
             echo ndkv
       # - ruby/install:
       #     version: '2.7.3'
