@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - ruby/install:
-          version: '2.7.3'
+          version: 2.7.3
       - run: echo "Ruby 2.7 has been installed"
       - run: gradle --version
       - run: echo 'success'
