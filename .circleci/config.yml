@@ -20,7 +20,7 @@ jobs:
       - ruby/install:
           version: '2.7.3'
       - run: echo "Ruby 2.7 has been installed"
-      - run: ruby -v
+      - run: gradle --version
       - run: echo 'success'
 workflows:
   build:
