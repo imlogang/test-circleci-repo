@@ -1,30 +1,34 @@
 version: 2.1
-
-orbs:
-  ruby: circleci/ruby@1.1.4
-  android: circleci/android@1.0.3
-
 jobs:
-  run_tests:
+  test:
     docker:
-      - image: cimg/android:29.0
+      - image: cimg/base
     steps:
-      - checkout
-      - run: echo 'tests run'
-  build:
+      - run: echo "run tests"
+  publish:
     docker:
-      - image: cimg/android:29.0
-    resource_class: medium+
+      - image: cimg/base
     steps:
-      - checkout
-      - ruby/install:
-          version: 2.7.3
-      - run: echo "Ruby 2.7 has been installed"
-      - run: gradle --version
-      - run: echo 'success'
+      - run: echo "publish"
+  deploy:
+    docker:
+      - image: cimg/base
+    steps:
+      - run: echo "deploy"
 workflows:
-  build:
+  main:
     jobs:
-      - run_tests
-      - build
-      #test 2
+      - test
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+      - deploy:
+          when: "<< pipeline.git.branch >>"
+          requires:
+            - publish
+
