@@ -27,43 +27,15 @@ workflows:
         - equal: [ test, << pipeline.git.tag  >> ]
         - equal: [ test1, << pipeline.git.tag  >> ]
     jobs:
+      - build-test
       - package:
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /.*/
-      - package:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-      - package:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-      - package:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-      - package:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-      - package:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-              #test
+      - deploy  
+      #test
             
   deploy:
     jobs:
