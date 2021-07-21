@@ -19,11 +19,6 @@ jobs:
 workflows:
   commit:
     jobs:
-      - build-test
-      
-  package:
-    jobs:
-      - build-test
       - package:
           filters:
             branches:
@@ -32,6 +27,14 @@ workflows:
               only: 
                 - test 
                 - test1
+      
+  package:
+    jobs:
+      - build-test
+      #test22
+            
+  deploy:
+    jobs:
       - deploy:
           filters:
             branches:
@@ -39,10 +42,5 @@ workflows:
             tags:
               only: 
                 - test 
-                - test1
-      #test22
-            
-  deploy:
-    jobs:
-      - deploy  
+                - test1 
 
