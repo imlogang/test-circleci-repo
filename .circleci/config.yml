@@ -40,7 +40,7 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/ 
-      #test2
+      #test22
             
   deploy:
     jobs:
