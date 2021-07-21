@@ -35,7 +35,7 @@ workflows:
             tags:
               only: /.*/
       - deploy  
-      #test
+      #test2
             
   deploy:
     jobs:
