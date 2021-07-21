@@ -27,7 +27,7 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
-      - deploy:
-          when: << pipeline.git.branch >>
+      - deploy #:
+          #when: << pipeline.git.branch >>
 
 
