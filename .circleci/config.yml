@@ -36,6 +36,11 @@ workflows:
       not: << pipeline.git.branch >>
     jobs:
       - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
       - publish:
           requires:
             - test
