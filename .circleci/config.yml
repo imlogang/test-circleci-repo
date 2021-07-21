@@ -15,9 +15,10 @@ jobs:
       - image: cimg/node:12.17
     steps:
       - run: echo "deploy"
-      
+
 workflows:
   main:
+    when: << pipeline.git.branch >>
     jobs:
       - test
       - publish:
@@ -28,7 +29,21 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
-      - deploy #:
-          #when: << pipeline.git.branch >>
+      - deploy 
+
+  tags:
+    when:
+      not: << pipeline.git.branch >>
+    jobs:
+      - test
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+      - deploy 
 
 
