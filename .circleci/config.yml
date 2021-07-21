@@ -34,7 +34,12 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
-      - deploy  
+      - deploy:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/ 
       #test2
             
   deploy:
