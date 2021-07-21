@@ -1,15 +1,15 @@
 version: 2.1
 jobs:
-  test:
+  build-test:
     docker:
       - image: cimg/node:12.17
     steps:
       - run: echo "run tests"
-  publish:
+  package:
     docker:
       - image: cimg/node:12.17
     steps:
-      - run: echo "publish"
+      - run: echo "package"
   deploy:
     docker:
       - image: cimg/node:12.17
@@ -17,38 +17,54 @@ jobs:
       - run: echo "deploy"
 
 workflows:
-  main:
-    when: << pipeline.git.branch >>
+  commit:
     jobs:
-      - test
-      - publish:
-          requires:
-            - test
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-      - deploy 
-
-  tags:
+      - build-test
+      
+  package:
     when:
-      not: << pipeline.git.branch >>
+      or:
+        - equal: [ test, << pipeline.git.tag  >> ]
+        - equal: [ test1, << pipeline.git.tag  >> ]
     jobs:
-      - test:
+      - package:
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /.*/
-      - publish:
-          requires:
-            - test
+      - package:
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /.*/
-      - deploy #tag
-
+      - package:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+      - package:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+      - package:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+      - package:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+            
+  deploy:
+    jobs:
+      - deploy  
 
