@@ -22,10 +22,6 @@ workflows:
       - build-test
       
   package:
-    when:
-      or:
-        - equal: [ test, << pipeline.git.tag  >> ]
-        - equal: [ test1, << pipeline.git.tag  >> ]
     jobs:
       - build-test
       - package:
@@ -33,13 +29,17 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /.*/
+              only: 
+                - test 
+                - test1
       - deploy:
           filters:
             branches:
               ignore: /.*/
             tags:
-              only: /.*/ 
+              only: 
+                - test 
+                - test1
       #test22
             
   deploy:
