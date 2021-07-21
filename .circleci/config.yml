@@ -28,7 +28,7 @@ workflows:
             tags:
               only: /.*/
       - deploy:
-          when: "<< pipeline.git.branch >>"
+          when: << pipeline.git.branch >>
           requires:
             - publish
 
