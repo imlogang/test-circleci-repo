@@ -2,19 +2,20 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/node
+      - image: cimg/node:12.17
     steps:
       - run: echo "run tests"
   publish:
     docker:
-      - image: cimg/node
+      - image: cimg/node:12.17
     steps:
       - run: echo "publish"
   deploy:
     docker:
-      - image: cimg/node
+      - image: cimg/node:12.17
     steps:
       - run: echo "deploy"
+      
 workflows:
   main:
     jobs:
