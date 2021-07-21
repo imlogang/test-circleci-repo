@@ -4,49 +4,12 @@ jobs:
     docker:
       - image: cimg/node:12.17
     steps:
-      - run: echo "run tests"
-  package:
-    docker:
-      - image: cimg/node:12.17
-    steps:
-      - run: echo "package"
-  deploy:
-    docker:
-      - image: cimg/node:12.17
-    steps:
-      - run: echo "deploy"
+      - run: echo << pipeline.git.tag >>
 
 workflows:
   commit:
     jobs:
-      - package:
+      - build-test:
           filters:
-            branches:
-              ignore: /.*/
             tags:
-              only: 
-                - test 
-                - test1
-      
-  package:
-    jobs:
-      - build-test
-      #test22
-            
-  deploy:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: 
-                - test 
-                - test1       
-      - run: echo "this worked!"
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only:
-                - test3
+              only: /.*/
