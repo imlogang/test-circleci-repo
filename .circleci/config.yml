@@ -42,5 +42,11 @@ workflows:
             tags:
               only: 
                 - test 
-                - test1 
-
+                - test1       
+      - run: echo "this worked!"
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - test3
