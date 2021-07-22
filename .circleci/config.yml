@@ -23,4 +23,4 @@ jobs:
 workflows:
   commit:
     jobs:
-      - build-test
+      - build-test # test
