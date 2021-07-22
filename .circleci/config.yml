@@ -17,7 +17,7 @@ jobs:
               echo "======"
             done
           background: true
-      - run: checkout
+      - checkout
       - run: echo "success"
 
 workflows:
