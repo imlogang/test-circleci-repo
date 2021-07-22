@@ -1,17 +1,21 @@
 version: 2.1
 jobs:
   build-test:
-    docker:
-      - image: cimg/node:12.17
+    machine:
+      - image: ubuntu-2004:202104-01
     steps:
-      - run: echo << pipeline.git.tag >>
+      - run:
+          command: |
+            while true; do
+              sleep 5
+              ps auxwwf
+              echo "======"
+            done
+          background: true
+      - run: checkout
+      - run: echo "success"
 
 workflows:
   commit:
     jobs:
-      - build-test:
-          filters:
-            tags:
-              only: /.*/
-
-              #test24
+      - build-test
