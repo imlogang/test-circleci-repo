@@ -1,8 +1,14 @@
 version: 2.1
+
+executors:
+  machine-ubuntu:
+    machine:
+      image: ubuntu-2004:202104-01
+    environment: *ci-env
+
 jobs:
   build-test:
-    machine:
-      - image: ubuntu-2004:202104-01
+    executor: machine-ubuntu
     steps:
       - run:
           command: |
