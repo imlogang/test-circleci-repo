@@ -9,7 +9,7 @@ jobs:
     # resource_class: xlarge
     # executor: machine-ubuntu
     docker:
-      - image: cimg/node
+      - image: cimg/node:16.5.0
     steps:
       - run: yarn version
 workflows:
