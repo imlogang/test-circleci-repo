@@ -1,28 +1,17 @@
 version: 2.1
 
-executors:
-  machine-ubuntu:
-    machine:
-      image: ubuntu-2004:202104-01
+# executors:
+#   machine-ubuntu:
+#     machine:
+#       image: ubuntu-2004:202104-01
 jobs:
   build-test:
-    resource_class: xlarge
-    executor: machine-ubuntu
+    # resource_class: xlarge
+    # executor: machine-ubuntu
+    docker:
+      image: cimg/node
     steps:
-      - run:
-          command: |
-            while true; do
-              sleep 5
-              ps auxwwf
-              echo "======"
-            done
-          background: true
-      - checkout
-      - run: echo "success"
-      - run:
-          command: cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes
-          when: always
-
+      - run: yarn version
 workflows:
   commit:
     jobs:
