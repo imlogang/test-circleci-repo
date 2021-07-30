@@ -1,21 +1,36 @@
-version: 2.1
+# version: 2.1
 
-# executors:
-#   machine-ubuntu:
-#     machine:
-#       image: ubuntu-2004:202104-01
+# # executors:
+# #   machine-ubuntu:
+# #     machine:
+# #       image: ubuntu-2004:202104-01
+# jobs:
+#   build-test:
+#     # resource_class: xlarge
+#     # executor: machine-ubuntu
+#     docker:
+#       - image: cimg/node:16.5.0
+#     steps:
+#       #- run: yarn version
+#       #https://app.circleci.com/pipelines/github/creditornot/wolt-ios-merchant/<< pipeline.number >>/workflows/${CIRCLE_WORKFLOW_ID}
+#       - run: echo https://app.circleci.com/pipelines/github/hud-code/test-circleci-repo/<< pipeline.number >>/workflows/${CIRCLE_WORKFLOW_ID}
+#       - run: echo << pipeline.number >>
+# workflows:
+#   commit:
+#     jobs:
+#       - build-test # test
+
+version: 2
+
 jobs:
-  build-test:
-    # resource_class: xlarge
-    # executor: machine-ubuntu
+  build:
     docker:
-      - image: cimg/node:16.5.0
+      - image: debian:stretch
     steps:
-      #- run: yarn version
-      #https://app.circleci.com/pipelines/github/creditornot/wolt-ios-merchant/3552/workflows/73b92ff2-9653-4cd7-9114-885e7ed8adbb
-      - run: echo https://app.circleci.com/pipelines/github/hud-code/test-circleci-repo/<< pipeline.number >>/workflows/${CIRCLE_WORKFLOW_ID}
-      - run: echo << pipeline.number >>
-workflows:
-  commit:
-    jobs:
-      - build-test # test
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
