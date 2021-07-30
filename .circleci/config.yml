@@ -14,7 +14,7 @@ jobs:
       #- run: yarn version
       #https://app.circleci.com/pipelines/github/creditornot/wolt-ios-merchant/3552/workflows/73b92ff2-9653-4cd7-9114-885e7ed8adbb
       - run: echo https://app.circleci.com/pipelines/github/hud-code/test-circleci-repo/workflows/${CIRCLE_WORKFLOW_ID}
-      - run: echo << pipeline.id >>
+      - run: echo << pipeline.number >>
 workflows:
   commit:
     jobs:
