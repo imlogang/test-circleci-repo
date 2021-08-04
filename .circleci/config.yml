@@ -1,3 +1,33 @@
+version: 2
+
+parameters:
+  test-param:
+    type: boolean
+    default: false
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.5.0
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+
+workflows:
+  version: 2
+  conditional-workflow:
+    when:
+      and: # All must be true to trigger
+        - equal: [ main, << pipeline.git.branch >> ]
+        - not: << pipeline.parameters.test-param >>
+
+    jobs:
+      - build
+
+
+
 # version: 2.1
 
 # # executors:
@@ -19,18 +49,3 @@
 #   commit:
 #     jobs:
 #       - build-test # test
-
-version: 2
-
-jobs:
-  build:
-    docker:
-      - image: debian:stretch
-    steps:
-      - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
