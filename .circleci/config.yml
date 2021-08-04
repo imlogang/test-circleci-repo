@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 parameters:
   test-param:
@@ -16,12 +16,11 @@ jobs:
           command: echo Hello, world.
 
 workflows:
-  version: 2
   conditional-workflow:
     when:
       and: # All must be true to trigger
-          - equal: [ main, << pipeline.git.branch >> ]
-          - not: << pipeline.parameters.test-param >>
+        - equal: [ main, << pipeline.git.branch >> ]
+        - not: << pipeline.parameters.test-param >>
     jobs:
       - build
 
