@@ -8,7 +8,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: cimg/node:16.5.0
+      - image: cimg/base
     steps:
       - checkout
       - run:
@@ -16,13 +16,15 @@ jobs:
           command: echo Hello, world.
 
 workflows:
-  conditional-workflow:
-    when:
-      and: # All must be true to trigger
-        - equal: [ main, << pipeline.git.branch >> ]
-        - not: << pipeline.parameters.test-param >>
     jobs:
-      - build
+      - build:
+          filters:
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
+            # only act on version tags
+            tags:
+              only: /^v.*/
 
 
 
@@ -47,3 +49,8 @@ workflows:
 #   commit:
 #     jobs:
 #       - build-test # test
+# conditional-workflow:
+#   when:
+#     and: # All must be true to trigger
+#       - equal: [ main, << pipeline.git.branch >> ]
+#       - not: << pipeline.parameters.test-param >>
