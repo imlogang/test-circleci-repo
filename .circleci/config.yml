@@ -8,7 +8,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: cimg/base
+      - image: circleci/android:api-30
     steps:
       - checkout
       - run:
@@ -18,14 +18,14 @@ jobs:
 workflows:
   build:
     jobs:
-      - build:
-          filters:
-            # ignore any commit on any branch by default
-            branches:
-              ignore: /.*/
-            # only act on version tags
-            tags:
-              only: /^v.*/
+      - build
+          # filters:
+          #   # ignore any commit on any branch by default
+          #   branches:
+          #     ignore: /.*/
+          #   # only act on version tags
+          #   tags:
+          #     only: /^v.*/
 
 
 
