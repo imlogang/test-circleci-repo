@@ -8,7 +8,8 @@ parameters:
 jobs:
   build:
     docker:
-      - image: circleci/android:api-30
+      - image: cimg/rust:1.54.0
+    resource_class: medium+
     steps:
       - checkout
       - run:
