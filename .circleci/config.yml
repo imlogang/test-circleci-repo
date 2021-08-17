@@ -4,11 +4,14 @@ parameters:
   test-param:
     type: boolean
     default: false
+  image-name:
+    type: string
+    default: "cimg/node:14.17.5"
 
 jobs:
   build:
     docker:
-      - image: cimg/node:14.17.5
+      - image: << pipeline.image-name >>
     resource_class: medium+
     steps:
       - checkout
