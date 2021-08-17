@@ -11,7 +11,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: << pipeline.image-name >>
+      - image: << pipeline.parameters.image-name >>
     resource_class: medium+
     steps:
       - checkout
