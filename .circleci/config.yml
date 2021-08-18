@@ -17,7 +17,7 @@ parameters:
 
 jobs:
   build:
-    executor: orbi-rust
+    executor: orb-project/rust
     steps:
       - checkout
       - run:
