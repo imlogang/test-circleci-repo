@@ -3,6 +3,9 @@ version: 2.1
 orbs:
   orb-project: orb-space/orb-project@dev:first
 
+executors:
+  orb-ex: orb-project/default:node
+
 parameters:
   test-param:
     type: boolean
@@ -13,7 +16,7 @@ parameters:
 
 jobs:
   build:
-    executor: orb-project/default:node
+    executor: orb-ex
     resource_class: medium+
     steps:
       - checkout
