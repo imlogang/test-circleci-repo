@@ -4,7 +4,7 @@ orbs:
   orb-project: orb-space/orb-project@dev:first
 
 executors:
-  orbi-ex: orb-project/default
+#  orbi-ex: orb-project/default
   image-name:
     docker:
       - image: "cimg/node:14.17.5"
@@ -16,7 +16,8 @@ parameters:
 
 jobs:
   build:
-    executor: orbi-ex
+    docker:
+      - image: cimg/node:stable
     steps:
       - checkout
       - run:
