@@ -1,13 +1,14 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@1.0.0
+  orb-project: orb-space/orb-project@1
 
 executors:
   orbi-ex: orb-project/default
   image-name:
     docker:
       - image: "cimg/node:14.17.5"
+  orbi-rust: orb-project/rust
 
 parameters:
   test-param:
@@ -16,7 +17,7 @@ parameters:
 
 jobs:
   build:
-    executor: orbi-ex
+    executor: orbi-rust
     steps:
       - checkout
       - run:
