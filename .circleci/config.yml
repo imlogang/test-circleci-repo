@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  orbi: orb-space/orb-project@dev:first
+
 parameters:
   test-param:
     type: boolean
@@ -11,7 +14,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: << pipeline.parameters.image-name >>
+      - image: orbi/node
     resource_class: medium+
     steps:
       - checkout
