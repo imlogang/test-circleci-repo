@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  latest: orb-space/orb-project@1
+  latest: orb-space/orb-project@1.0.2
 
 executors:
   orbi-ex: orb-project/default
