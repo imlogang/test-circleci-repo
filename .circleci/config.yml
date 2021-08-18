@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@0.0.1
+  orb-project: orb-space/orb-project@dev:first
 
 executors:
   orbi: orb-project/default
