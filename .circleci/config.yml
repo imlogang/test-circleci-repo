@@ -13,7 +13,7 @@ parameters:
 
 jobs:
   build:
-    executor: orb-project/default:node
+    executor: orb-project/default
     resource_class: medium+
     steps:
       - checkout
