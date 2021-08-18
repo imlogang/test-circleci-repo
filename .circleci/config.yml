@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@dev:first
+  orb-project: orb-space/orb-project@0.0.1
 
 executors:
   orb-ex: orb-project/default:node
