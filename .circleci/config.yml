@@ -1,10 +1,10 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@dev:first
+  orbi: orb-space/orb-project@dev:first
 
 executors:
-  orbi: orb-project/default
+  orbi-ex: orbi/default
   image-name:
     docker:
       - image: "cimg/node:14.17.5"
@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Greeting
           command: echo Hello, world.
-      - orb-project/greet
+      - orbi/greet
 
 workflows:
   build:
@@ -35,6 +35,7 @@ workflows:
           #   # only act on version tags
           #   tags:
           #     only: /^v.*/
+          #test
 
 
 
