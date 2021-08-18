@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@dev:first
+  orb-project: orb-space/orb-project@1.0.0
 
 executors:
 #  orbi-ex: orb-project/default
@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Greeting
           command: echo Hello, world.
-#      - orb-project/greet
+      - orb-project/greet
 
 workflows:
   build:
