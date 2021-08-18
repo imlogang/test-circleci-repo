@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  orb-project: orb-space/orb-project@1
+  latest: orb-space/orb-project@1
 
 executors:
   orbi-ex: orb-project/default
@@ -17,7 +17,7 @@ parameters:
 
 jobs:
   build:
-    executor: orb-project/rust
+    executor: latest/python
     steps:
       - checkout
       - run:
