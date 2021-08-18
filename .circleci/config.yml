@@ -5,9 +5,6 @@ orbs:
 
 executors:
   orb-ex: orb-project/default:node
-    auth:
-      username: hudcode
-      password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
 parameters:
   test-param:
