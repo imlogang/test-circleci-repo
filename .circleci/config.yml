@@ -4,7 +4,7 @@ orbs:
   orb-project: orb-space/orb-project@0.0.1
 
 executors:
-  orb-ex: orb-project/default
+  orbi: orb-project/default
 
 parameters:
   test-param:
@@ -16,7 +16,7 @@ parameters:
 
 jobs:
   build:
-    executor: orb-ex
+    executor: orbi
     steps:
       - checkout
       - run:
