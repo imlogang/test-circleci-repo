@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   latest: orb-space/orb-project@1
-  hello: orb-space/test-orb-1@dev:alpha
+  hello: orb-space/test-orb-7@dev:alpha
 
 executors:
   orbi-ex: orb-project/default
