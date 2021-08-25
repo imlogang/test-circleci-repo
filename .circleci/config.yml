@@ -32,11 +32,26 @@ jobs:
           command: echo Hello, world.
       - latest/greet
       - hello/hello-zach
-
+  build2:
+    executor: php
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+  build3:
+    executor: mysql
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
 workflows:
   build:
     jobs:
       - build
+      - build2
+      - build3
           # filters:
           #   # ignore any commit on any branch by default
           #   branches:
