@@ -10,6 +10,12 @@ executors:
     docker:
       - image: "cimg/node:14.17.5"
   orbi-rust: orb-project/rust
+  php:
+    docker:
+      - image: "circleci/php@sha256:7a3c8dbd2a39b3af732eb541bb5bc8a180d9ff083fc3cc9bd050b6a2c36898dd"
+  mysql:
+    docker:
+      - image: "circleci/mysql@sha256:c29fd8f4428cf873c2031549efa946ee86ac36135686e660c6030dfffe35d48f"
 
 parameters:
   test-param:
