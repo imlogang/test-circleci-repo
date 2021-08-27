@@ -11,7 +11,7 @@ executors:
   mysql:
     docker:
       - image: "circleci/mysql@sha256:c29fd8f4428cf873c2031549efa946ee86ac36135686e660c6030dfffe35d48f"
-  php7.3:
+  php7-3:
     docker:
       - image: "circleci/php@sha256:baf464ba817a90d5088c7e87805518a6cc2f666cb869b2f1e53d0bb6baea1d1f"
 
@@ -22,7 +22,7 @@ parameters:
 
 jobs:
   build:
-    executor: php7.3
+    executor: php7-3
     steps:
       - checkout
       - run:
