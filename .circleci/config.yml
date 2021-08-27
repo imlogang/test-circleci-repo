@@ -5,17 +5,15 @@ orbs:
   hello: orb-space/test-orb-7@dev:alpha
 
 executors:
-  orbi-ex: orb-project/default
-  image-name:
-    docker:
-      - image: "cimg/node:14.17.5"
-  orbi-rust: orb-project/rust
   php:
     docker:
       - image: "circleci/php@sha256:7a3c8dbd2a39b3af732eb541bb5bc8a180d9ff083fc3cc9bd050b6a2c36898dd"
   mysql:
     docker:
       - image: "circleci/mysql@sha256:c29fd8f4428cf873c2031549efa946ee86ac36135686e660c6030dfffe35d48f"
+  php7.3:
+    docker:
+      - image: "circleci/php@sha256:baf464ba817a90d5088c7e87805518a6cc2f666cb869b2f1e53d0bb6baea1d1f"
 
 parameters:
   test-param:
@@ -24,14 +22,14 @@ parameters:
 
 jobs:
   build:
-    executor: latest/python
+    executor: php7.3
     steps:
       - checkout
       - run:
           name: Greeting
           command: echo Hello, world.
-      - latest/greet
-      - hello/hello-zach
+      # - latest/greet
+      # - hello/hello-zach
   build2:
     executor: php
     steps:
@@ -50,8 +48,6 @@ workflows:
   build:
     jobs:
       - build
-      - build2
-      - build3
           # filters:
           #   # ignore any commit on any branch by default
           #   branches:
