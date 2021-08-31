@@ -51,6 +51,9 @@ workflows:
         equals: ["<< pipeline.git.tag >>", ""]
     jobs:
       - build
+  build2:
+    jobs:
+      - build2
           # filters:
           #   # ignore any commit on any branch by default
           #   branches:
