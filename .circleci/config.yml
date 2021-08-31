@@ -46,6 +46,9 @@ jobs:
           command: echo Hello, world.
 workflows:
   build:
+    when:
+      not:
+        equals: ["<< pipeline.git.tag >>", ""]
     jobs:
       - build
           # filters:
