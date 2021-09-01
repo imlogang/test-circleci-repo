@@ -19,6 +19,9 @@ parameters:
   test-param:
     type: boolean
     default: false
+  test-string:
+    type: string
+    default: ""
 
 jobs:
   build:
@@ -48,14 +51,10 @@ workflows:
   build:
     when:
       not:
-        equal: [<< pipeline.git.tag >>, ]
+        equal: [<< pipeline.test-string >>, ""]
     jobs:
       - build
   build2:
-    when:
-      matches: 
-        pattern: ".+"
-        value: "<< pipeline.git.tag >>"
     jobs:
       - build2
           # filters:
