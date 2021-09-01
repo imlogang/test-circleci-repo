@@ -48,7 +48,7 @@ workflows:
   build:
     when:
       not:
-        equal: ["<< pipeline.git.tag >>", ""]
+        equal: [<< pipeline.git.tag >>, ]
     jobs:
       - build
   build2:
