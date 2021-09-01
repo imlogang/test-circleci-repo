@@ -21,7 +21,7 @@ parameters:
     default: false
   test-string:
     type: string
-    default: << pipeline.git.tag >>
+    default: "<< pipeline.git.tag >>"
 
 jobs:
   build:
