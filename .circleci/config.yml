@@ -53,7 +53,10 @@ workflows:
       not:
         equal: [<< pipeline.git.tag >>, ]
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
   build2:
     jobs:
       - build2
