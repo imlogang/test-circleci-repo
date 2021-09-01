@@ -53,7 +53,9 @@ workflows:
       - build
   build2:
     when:
-      matches: ["<< pipeline.git.tag >>", ".*"]
+      matches: 
+        pattern: ".+"
+        value: "<< pipeline.git.tag >>"
     jobs:
       - build2
           # filters:
