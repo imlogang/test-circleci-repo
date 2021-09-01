@@ -21,7 +21,7 @@ parameters:
     default: false
   test-string:
     type: string
-    default: "<< pipeline.git.tag >>"
+    default: ""
 
 jobs:
   build:
@@ -51,7 +51,7 @@ workflows:
   build:
     when:
       not:
-        equal: [<< pipeline.parameters.test-string >>, ""]
+        equal: [<< pipeline.git.tag >>, ]
     jobs:
       - build
   build2:
