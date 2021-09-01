@@ -36,7 +36,7 @@ jobs:
       - checkout
       - run:
           name: Greeting
-          command: echo << pipeline.git.tag >>
+          command: echo Hello, world.
   build3:
     executor: mysql
     steps:
@@ -52,6 +52,8 @@ workflows:
     jobs:
       - build
   build2:
+    when:
+      matches: [<< pipeline.git.tag >>, ".*"]
     jobs:
       - build2
           # filters:
