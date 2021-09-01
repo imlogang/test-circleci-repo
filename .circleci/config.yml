@@ -48,12 +48,12 @@ workflows:
   build:
     when:
       not:
-        equal: [<< pipeline.git.tag >>, ""]
+        equal: ["<< pipeline.git.tag >>", ""]
     jobs:
       - build
   build2:
     when:
-      matches: [<< pipeline.git.tag >>, ".*"]
+      matches: ["<< pipeline.git.tag >>", ".*"]
     jobs:
       - build2
           # filters:
