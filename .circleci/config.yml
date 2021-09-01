@@ -27,7 +27,7 @@ jobs:
       - checkout
       - run:
           name: Greeting
-          command: echo Hello, world.
+          command: echo "<< pipeline.git.tag >>"
       # - latest/greet
       # - hello/hello-zach
   build2:
@@ -36,7 +36,7 @@ jobs:
       - checkout
       - run:
           name: Greeting
-          command: echo Hello, world.
+          command: echo "<< pipeline.git.tag >>"
   build3:
     executor: mysql
     steps:
@@ -61,7 +61,7 @@ workflows:
           #   # only act on version tags
           #   tags:
           #     only: /^v.*/
-          #test
+          #test test 
 
 
 
