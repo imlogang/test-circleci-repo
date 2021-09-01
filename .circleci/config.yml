@@ -51,7 +51,7 @@ workflows:
   build:
     when:
       not:
-        equal: [<< pipeline.parameters.test-string >>, ""]
+        equal: [<< pipeline.git.tag >>, ""]
     jobs:
       - build
   build2:
