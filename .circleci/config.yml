@@ -41,6 +41,8 @@ jobs:
           name: Greeting
           command: echo Hello, world.
   test-orb:
+    docker:
+      - image: cimg/base:latest
     steps:
       - latest/greet
   # build3:
