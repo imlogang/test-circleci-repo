@@ -59,8 +59,7 @@ workflows:
             tags:
               only: /.*/
           post-steps:
-            - build2
-
+            - latest/greet
   # build2:
   #   jobs:
   #     - build2
