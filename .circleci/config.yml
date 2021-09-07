@@ -47,19 +47,23 @@ jobs:
       - run:
           name: Greeting
           command: echo Hello, world.
+
 workflows:
   build:
-    when:
-      not:
-        equal: [<< pipeline.git.tag >>, ]
+    # when:
+    #   not:
+    #     equal: [<< pipeline.git.tag >>, ]
     jobs:
       - build:
           filters:
             tags:
               only: /.*/
-  build2:
-    jobs:
-      - build2
+          post-steps:
+            - build2
+
+  # build2:
+  #   jobs:
+  #     - build2
           # filters:
           #   # ignore any commit on any branch by default
           #   branches:
