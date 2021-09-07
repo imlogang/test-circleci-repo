@@ -40,13 +40,16 @@ jobs:
       - run:
           name: Greeting
           command: echo Hello, world.
-  build3:
-    executor: mysql
+  test-orb:
     steps:
-      - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
+      - latest/greet
+  # build3:
+  #   executor: mysql
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Greeting
+  #         command: echo Hello, world.
 
 workflows:
   build:
@@ -58,8 +61,9 @@ workflows:
           filters:
             tags:
               only: /.*/
-          post-steps:
-            - latest/greet
+      - test-orb:
+          requires:
+            - build
   # build2:
   #   jobs:
   #     - build2
