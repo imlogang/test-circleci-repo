@@ -5,6 +5,7 @@ jobs:
     machine: true
     resource_class: orb-space/k8s-class
     steps:
+      - checkout
       - run: echo "Hi I'm on Runners!"
 
 workflows:
