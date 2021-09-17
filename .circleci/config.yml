@@ -1,14 +1,31 @@
 version: 2.1
 
+parameters:
+  run_by_api:
+    type: boolean
+    default: false
+
 jobs:
-  runner:
-    machine: true
-    resource_class: orb-space/k8s-class
+  regular:
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run: echo "Hi I'm on Runners!"
+      - run: echo "I was run normally"
+
+  api-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "I was run by API"
 
 workflows:
-  run:
+  normal:
     jobs:
-      - runner
+      - regular
+
+  api-workflow:
+    when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
+    jobs:
+      - api-job
