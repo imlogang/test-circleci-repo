@@ -4,28 +4,32 @@ parameters:
   run_by_api:
     type: boolean
     default: false
+  class_size:
+    type: string
+    default: large
 
 jobs:
   regular:
     docker:
       - image: cimg/base:stable
+    resource_class: << pipeline.parameters.class_size >>
     steps:
       - checkout
       - run: echo "I was run normally"
 
-  api-job:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run: echo "I was run by API"
+  # api-job:
+  #   docker:
+  #     - image: cimg/base:stable
+  #   steps:
+  #     - checkout
+  #     - run: echo "I was run by API"
 
 workflows:
   normal:
     jobs:
       - regular
 
-  api-workflow:
-    when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
-    jobs:
-      - api-job
+  # api-workflow:
+  #   when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
+  #   jobs:
+  #     - api-job
