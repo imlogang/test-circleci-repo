@@ -16,6 +16,9 @@ jobs:
     steps:
       - checkout
       - run: echo "I was run normally"
+      - store_test_results:
+          path: reports/<< pipeline.git.branch >>
+
 
   # api-job:
   #   docker:
