@@ -11,8 +11,7 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: cimg/base:stable
-    resource_class: << pipeline.parameters.class_size >>
+      - image: circleci/node:fermium
     steps:
       - checkout
       - run: echo "I was run normally"
