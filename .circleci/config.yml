@@ -21,7 +21,10 @@ jobs:
     steps:
       - checkout
       - run: echo `export TEST_THIS=Zach' >> $BASH_ENV
-      - run: echo $TEST_THIS
+      - run: 
+          command: |
+            source $BASH_ENV
+            echo $TEST_THIS
 
 
   # api-job:
