@@ -20,7 +20,7 @@ jobs:
       - image: circleci/node:fermium
     steps:
       - checkout
-      - run: echo `export TEST_THIS="Zach"' >> $BASH_ENV
+      - run: echo `export TEST_THIS=Zach' >> $BASH_ENV
       - run: echo $TEST_THIS
 
 
