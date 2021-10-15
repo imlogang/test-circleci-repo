@@ -20,10 +20,8 @@ jobs:
       - image: circleci/node:fermium
     steps:
       - checkout
-      - run: echo $CIRCLE_PROJECT_USERNAME
-      - run: echo "$COMMITTER_USER_ID"
-      - run: echo "@$COMMITTER_USER_ID"
-      - run: echo @ "$COMMITTER_USER_ID"
+      - run: echo `export TEST_THIS="Zach"' >> $BASH_ENV
+      - run: echo $TEST_THIS
 
 
   # api-job:
