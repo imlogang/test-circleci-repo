@@ -9,7 +9,7 @@ parameters:
     default: large
   zuid:
     type: string
-    default: <@$COMMITTER_USER_ID>
+    default: CIRCLE_PROJECT_USERNAME
   zuidq:
     type: string
     default: "<@$COMMITTER_USER_ID>"
@@ -20,7 +20,7 @@ jobs:
       - image: circleci/node:fermium
     steps:
       - checkout
-      - run: echo $COMMITTER_USER_ID
+      - run: echo $CIRCLE_PROJECT_USERNAME
       - run: echo "$COMMITTER_USER_ID"
       - run: echo "@$COMMITTER_USER_ID"
       - run: echo @ "$COMMITTER_USER_ID"
