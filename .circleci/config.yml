@@ -22,6 +22,7 @@ jobs:
       - checkout
       - run: echo "export TEST_THIS='@''BAR'" >> $BASH_ENV
       - run: echo $TEST_THIS
+      - run: exit 0
 
 
   # api-job:
