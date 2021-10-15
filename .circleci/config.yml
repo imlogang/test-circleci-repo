@@ -7,6 +7,12 @@ parameters:
   class_size:
     type: string
     default: large
+  zuid:
+    type: string
+    default: <@$COMMITTER_USER_ID>
+  zuidq:
+    type: string
+    default: "<@$COMMITTER_USER_ID>"
 
 jobs:
   regular:
@@ -14,12 +20,12 @@ jobs:
       - image: circleci/node:fermium
     steps:
       - checkout
-      - run: echo "I was run normally"
-      - run: 
-          command: |
-            mkdir -p reports/<< pipeline.git.branch >>
-      - store_test_results:
-          path: reports/<< pipeline.git.branch >>
+      - run: echo << pipeline.parameters.zuid >>
+      - run: echo << pipeline.parameters.zuidq >>
+      - run: echo $COMMITTER_USER_ID
+      - run: echo "$COMMITTER_USER_ID"
+      - run: echo "@$COMMITTER_USER_ID"
+      - run: echo @ "$COMMITTER_USER_ID"
 
 
   # api-job:
