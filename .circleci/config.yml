@@ -20,7 +20,7 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base
     steps:
       - checkout
       - python/test
