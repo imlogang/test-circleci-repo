@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  python: circleci/python@1.4.0
+
 parameters:
   run_by_api:
     type: boolean
@@ -17,12 +20,10 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: circleci/node:fermium
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run: echo "export TEST_THIS='@''BAR'" >> $BASH_ENV
-      - run: echo $TEST_THIS
-      - run: exit 0
+      - python/test
 
 
   # api-job:
