@@ -23,7 +23,7 @@ jobs:
       - image: cimg/base
     steps:
       - checkout
-      - python/test
+      - python/install-packages
 
 
   # api-job:
