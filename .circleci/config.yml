@@ -1,7 +1,7 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@1.4.0
+# orbs:
+#   python: circleci/python@1.4.0
 
 parameters:
   run_by_api:
@@ -23,7 +23,8 @@ jobs:
       - image: cimg/python:3.10.0
     steps:
       - checkout
-      - python/install-packages
+      - run: echo "hello world"
+      # - python/install-packages
 
 
   # api-job:
