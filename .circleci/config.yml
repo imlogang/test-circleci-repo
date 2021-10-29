@@ -20,7 +20,7 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: cimg/python:3.10.0
+      - image: cimg/base:2021.10
     steps:
       - checkout
       - run: echo "hello world"
@@ -33,6 +33,7 @@ jobs:
   #   steps:
   #     - checkout
   #     - run: echo "I was run by API"
+
 
 workflows:
   normal:
