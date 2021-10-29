@@ -20,7 +20,10 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: cimg/python:3.10.0
+      - image: teachable/fedora:v2.1.1
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     steps:
       - checkout
       - run: echo "hello world"
