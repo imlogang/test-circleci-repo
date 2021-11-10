@@ -28,7 +28,7 @@ jobs:
       - checkout
       - run:
           command: |
-          echo node -v
+          node -v
       # - python/install-packages
 
 
