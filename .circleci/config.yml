@@ -20,13 +20,13 @@ parameters:
 jobs:
   regular:
     docker:
-      - image: teachable/fedora:v2.1.1
+      - image: cimg/ruby:3.0.2-browsers
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: echo node -v
       # - python/install-packages
 
 
