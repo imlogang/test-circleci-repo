@@ -20,14 +20,10 @@ parameters:
 jobs:
   regular:
     docker:
-<<<<<<< HEAD
       - image: cimg/ruby:3.0.2-browsers
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
-=======
-      - image: cimg/base:2021.10
->>>>>>> 1d81d4e1af8c5ea56e3654838d5617c6371592c8
     steps:
       - checkout
       - run: echo node -v
@@ -51,7 +47,3 @@ workflows:
   #   when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
   #   jobs:
   #     - api-job
-<<<<<<< HEAD
-=======
-
->>>>>>> 1d81d4e1af8c5ea56e3654838d5617c6371592c8
