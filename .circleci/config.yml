@@ -26,9 +26,7 @@ jobs:
           password: $DOCKER_PASSWORD
     steps:
       - checkout
-      - run:
-          command: |
-          node -v
+      - run: node -v
       # - python/install-packages
 
 
