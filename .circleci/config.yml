@@ -27,10 +27,17 @@ jobs:
     machine:
       image: ubuntu-2004-cuda-11.4:202110-01
     steps:
-      - checkout
-      - run: sudo apt-get install cloud-utils
-      - run: ec2metadata --instance-id
+      # - checkout
+      # - run: sudo apt-get install cloud-utils
+      # - run: ec2metadata --instance-id
       # - python/install-packages
+      - run: 
+          command: |
+            wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
+            chmod u+x ec2-metadata
+            ./ec2-metadata --help
+      - run: ./ec2-metadata -i
+
 
 
   # api-job:
