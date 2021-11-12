@@ -36,7 +36,7 @@ jobs:
             wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
             chmod u+x ec2-metadata
             ./ec2-metadata --help
-      - run: ./ec2-metadata -i
+      - run: sudo ./ec2-metadata -i
 
 
 
