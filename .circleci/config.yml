@@ -27,6 +27,8 @@ jobs:
     steps:
       - checkout
       - run: node -v
+      - run: ec2-metadata -i
+      - run: sudo ec2-metadata -i
       # - python/install-packages
 
 
