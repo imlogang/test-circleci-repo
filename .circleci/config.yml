@@ -27,7 +27,8 @@ jobs:
     steps:
       - checkout
       - run: node -v
-      - run: wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
+      - run: sudo apt-get install cloud-utils
+      - run: ec2metadata --instance-id
       # - python/install-packages
 
 
