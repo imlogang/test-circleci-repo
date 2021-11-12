@@ -19,13 +19,13 @@ parameters:
 
 jobs:
   regular:
-    # docker:
-    #   - image: cimg/ruby:3.0.2-browsers
-        # auth:
-        #   username: $DOCKER_USERNAME
-        #   password: $DOCKER_PASSWORD
-    machine:
-      image: ubuntu-2004-cuda-11.4:202110-01
+    docker:
+      - image: cimg/ruby:3.0.2-browsers
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+    # machine:
+    #   image: ubuntu-2004-cuda-11.4:202110-01
     steps:
       # - checkout
       # - run: sudo apt-get install cloud-utils
