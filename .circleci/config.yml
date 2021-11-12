@@ -19,8 +19,10 @@ parameters:
 
 jobs:
   regular:
-    docker:
-      - image: cimg/ruby:3.0.2-browsers
+    # docker:
+    #   - image: cimg/ruby:3.0.2-browsers
+    machine:
+      image: ubuntu-2004-cuda-11.4:202110-01
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
