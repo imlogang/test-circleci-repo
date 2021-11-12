@@ -21,14 +21,13 @@ jobs:
   regular:
     # docker:
     #   - image: cimg/ruby:3.0.2-browsers
+        # auth:
+        #   username: $DOCKER_USERNAME
+        #   password: $DOCKER_PASSWORD
     machine:
       image: ubuntu-2004-cuda-11.4:202110-01
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
     steps:
       - checkout
-      - run: node -v
       - run: sudo apt-get install cloud-utils
       - run: ec2metadata --instance-id
       # - python/install-packages
