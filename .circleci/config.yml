@@ -24,19 +24,23 @@ jobs:
     #     auth:
     #       username: $DOCKER_USERNAME
     #       password: $DOCKER_PASSWORD
-    machine:
-      image: ubuntu-2004-cuda-11.4:202110-01
+    # machine:
+    #   image: ubuntu-2004-cuda-11.4:202110-01
+    macos:
+      xcode: 12.5.1
+    resource_class: macos.x86.medium.gen2
     steps:
       # - checkout
       # - run: sudo apt-get install cloud-utils
       # - run: ec2metadata --instance-id
       # - python/install-packages
-      - run: 
-          command: |
-            wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
-            chmod u+x ec2-metadata
-            ./ec2-metadata --help
-      - run: sudo ./ec2-metadata -i
+      # - run: 
+      #     command: |
+      #       wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
+      #       chmod u+x ec2-metadata
+      #       ./ec2-metadata --help
+      # - run: sudo ./ec2-metadata -i
+      - run: echo "hello world"
 
 
 
