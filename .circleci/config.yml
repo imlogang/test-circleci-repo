@@ -1,63 +1,86 @@
+# YAML anchor "build" to prevent duplication in CircleCI jobs section.
 version: 2.1
 
-# orbs:
-#   python: circleci/python@1.4.0
+setup: true
 
-parameters:
-  run_by_api:
-    type: boolean
-    default: false
-  class_size:
-    type: string
-    default: large
-  zuid:
-    type: string
-    default: CIRCLE_PROJECT_USERNAME
-  zuidq:
-    type: string
-    default: "<@$COMMITTER_USER_ID>"
+orbs:
+  continuation: circleci/continuation@0.2.0
 
 jobs:
-  regular:
-    # docker:
-    #   - image: cimg/ruby:3.0.2-browsers
-    #     auth:
-    #       username: $DOCKER_USERNAME
-    #       password: $DOCKER_PASSWORD
-    # machine:
-    #   image: ubuntu-2004-cuda-11.4:202110-01
-    macos:
-      xcode: 12.5.1
-    resource_class: macos.x86.medium.gen2
+  docker_build:
+    docker:
+      - image: cimg/base:2021.04
     steps:
-      # - checkout
-      # - run: sudo apt-get install cloud-utils
-      # - run: ec2metadata --instance-id
-      # - python/install-packages
-      # - run: 
-      #     command: |
-      #       wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
-      #       chmod u+x ec2-metadata
-      #       ./ec2-metadata --help
-      # - run: sudo ./ec2-metadata -i
-      - run: echo "hello world"
-
-
-
-  # api-job:
-  #   docker:
-  #     - image: cimg/base:stable
-  #   steps:
-  #     - checkout
-  #     - run: echo "I was run by API"
-
+      - checkout
+      - continuation/continue:
+          configuration_path: .circleci/build_docker_images.yml
 
 workflows:
-  normal:
+  version: 2
+  default:
     jobs:
-      - regular
+      - docker_build
 
-  # api-workflow:
-  #   when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
-  #   jobs:
-  #     - api-job
+# version: 2.1
+
+# # orbs:
+# #   python: circleci/python@1.4.0
+
+# parameters:
+#   run_by_api:
+#     type: boolean
+#     default: false
+#   class_size:
+#     type: string
+#     default: large
+#   zuid:
+#     type: string
+#     default: CIRCLE_PROJECT_USERNAME
+#   zuidq:
+#     type: string
+#     default: "<@$COMMITTER_USER_ID>"
+
+# jobs:
+#   regular:
+#     # docker:
+#     #   - image: cimg/ruby:3.0.2-browsers
+#     #     auth:
+#     #       username: $DOCKER_USERNAME
+#     #       password: $DOCKER_PASSWORD
+#     # machine:
+#     #   image: ubuntu-2004-cuda-11.4:202110-01
+#     macos:
+#       xcode: 12.5.1
+#     resource_class: macos.x86.medium.gen2
+#     steps:
+#       # - checkout
+#       # - run: sudo apt-get install cloud-utils
+#       # - run: ec2metadata --instance-id
+#       # - python/install-packages
+#       # - run: 
+#       #     command: |
+#       #       wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
+#       #       chmod u+x ec2-metadata
+#       #       ./ec2-metadata --help
+#       # - run: sudo ./ec2-metadata -i
+#       - run: echo "hello world"
+
+
+
+#   # api-job:
+#   #   docker:
+#   #     - image: cimg/base:stable
+#   #   steps:
+#   #     - checkout
+#   #     - run: echo "I was run by API"
+
+
+# workflows:
+#   normal:
+#     jobs:
+#       - regular
+
+#   # api-workflow:
+#   #   when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
+#   #   jobs:
+#   #     - api-job
