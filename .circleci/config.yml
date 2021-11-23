@@ -16,7 +16,6 @@ jobs:
           configuration_path: .circleci/build_docker_images.yml
 
 workflows:
-  version: 2
   default:
     jobs:
       - docker_build
