@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <items>
+    <name>Server-API validate Pay Friends when chime member pays a friend spending balances for both accounts are updated</name>
+    <file>spec/chime/integration/server_api/server_api_pay_friends_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_pay_friends_spec</classname>
+    <result>success</result>
+    <run_time>84.366408</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Transaction-Service validate Direct Deposits when there is one direct deposit matches the direct deposit field values</name>
+    <file>spec/chime/integration/transaction_service/transaction_service_server_api_direct_deposits_spec.rb</file>
+    <classname>spec.chime.integration.transaction_service.transaction_service_server_api_direct_deposits_spec</classname>
+    <result>success</result>
+    <run_time>43.289098</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Transaction-Service validate Direct Deposits when there are multiple direct deposits matches the direct deposit field values</name>
+    <file>spec/chime/integration/transaction_service/transaction_service_server_api_direct_deposits_spec.rb</file>
+    <classname>spec.chime.integration.transaction_service.transaction_service_server_api_direct_deposits_spec</classname>
+    <result>success</result>
+    <run_time>22.237074</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Transaction-Service validate Direct Deposits when there are no direct deposits matches the direct deposit field nil values</name>
+    <file>spec/chime/integration/transaction_service/transaction_service_server_api_direct_deposits_spec.rb</file>
+    <classname>spec.chime.integration.transaction_service.transaction_service_server_api_direct_deposits_spec</classname>
+    <result>success</result>
+    <run_time>18.78985</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is declined pending request is declined</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_declined_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_declined_spec</classname>
+    <result>success</result>
+    <run_time>58.263111</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is declined but the user is not authorized to cancel it pending request is declined</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_declined_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_declined_spec</classname>
+    <result>success</result>
+    <run_time>29.301155</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is non_receipt_of_goods_or_services behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>39.39513</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is merchandise_was_returned behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>19.797188</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is paid_for_goods_services_by_other_means behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>16.252066</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is duplicate_charge behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>16.542498</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is credit_not_posted behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>16.390534</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Disputes-Service validate In-App Disputes Filing when dispute reason is incorrect_amount_charged behaves like it creates a dispute via Server-API creates a dispute with the correct reason in disputes-service</name>
+    <file>spec/chime/integration/disputes_service/disputes_service_in_app_disputes_spec.rb</file>
+    <classname>spec.chime.integration.disputes_service.disputes_service_in_app_disputes_spec</classname>
+    <result>success</result>
+    <run_time>15.168682</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Checking Enrollment when user enrolls in a checking account returns success status with correct enrolled accounts</name>
+    <file>spec/chime/integration/consumer/consumer_enroll_checking_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_enroll_checking_spec</classname>
+    <result>success</result>
+    <run_time>13.145179</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Savings Enrollment when user enrolls in a savings account returns success status with correct enrolled accounts</name>
+    <file>spec/chime/integration/consumer/consumer_enroll_savings_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_enroll_savings_spec</classname>
+    <result>success</result>
+    <run_time>30.927901</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Debit Card when user activates a valid card returns success status</name>
+    <file>spec/chime/integration/consumer/consumer_user_card_activation_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_card_activation_spec</classname>
+    <result>success</result>
+    <run_time>15.629531</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Debit Card when user activates an invalid card returns card activation failure message</name>
+    <file>spec/chime/integration/consumer/consumer_user_card_activation_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_card_activation_spec</classname>
+    <result>success</result>
+    <run_time>14.52558</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Member Sign Up when user&#x27;s email is empty returns error for invalid input</name>
+    <file>spec/chime/integration/consumer/consumer_sign_up_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_up_spec</classname>
+    <result>success</result>
+    <run_time>8.206694</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Member Sign Up when user&#x27;s password is empty returns error for invalid input</name>
+    <file>spec/chime/integration/consumer/consumer_sign_up_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_up_spec</classname>
+    <result>success</result>
+    <run_time>5.161041</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when home non core query is called returns correct member info</name>
+    <file>spec/chime/integration/server_api/server_api_home_non_core_query_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_home_non_core_query_spec</classname>
+    <result>success</result>
+    <run_time>40.86975</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Update Account Info graphql queries/mutations when update user email mutation is called returns correct user settings with updated email</name>
+    <file>spec/chime/integration/server_api/server_api_update_account_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_update_account_spec</classname>
+    <result>success</result>
+    <run_time>51.999819</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is accepted (v1) pending request is accepted</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_accepted_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_accepted_spec</classname>
+    <result>success</result>
+    <run_time>66.786583</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is accepted (v2) pending request is accepted</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_accepted_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_accepted_spec</classname>
+    <result>success</result>
+    <run_time>36.421079</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when requester member requests money from a non chime member pending request is not created</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_non_chime_member_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_non_chime_member_spec</classname>
+    <result>success</result>
+    <run_time>21.1568</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is cancelled pending request is cancelled</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_cancelled_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_cancelled_spec</classname>
+    <result>success</result>
+    <run_time>66.069189</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is cancelled but the user is not authorized to cancel it pending request is declined</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_cancelled_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_cancelled_spec</classname>
+    <result>success</result>
+    <run_time>35.017327</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Debit Card when GSim is called to get the checking account debit card info returns the card number and expiration date for the associated debit card</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_account_cards_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_account_cards_spec</classname>
+    <result>success</result>
+    <run_time>37.432662</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API SpotMe Limit validate SpotMe limit user with DD 2000 returns max_eligible_limit is more than 0</name>
+    <file>spec/chime/integration/server_api/server_api_spotme_limit_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_spotme_limit_spec</classname>
+    <result>failure</result>
+    <run_time>47.187232</run_time>
+    <message>Failure/Error: raise expectation_error_message
+RuntimeError:
+  Unable to send Server API query/mutation: ENROLL_TO_OVERDRAFT_MUTATION
+  *******************************************************************************************
+  ** Please check DataDog trace at: https://app.datadoghq.com/apm/trace/232151252830401460 **
+  *******************************************************************************************
+  Request: POST http://127.0.0.1:3006/
+  {
+    &quot;account_id&quot;: &quot;GwPGfgnK&quot;,
+    &quot;status&quot;: &quot;enrolled&quot;
+  }
+  Payload: ENROLL_TO_OVERDRAFT_MUTATION
+  Response: RuntimeError : HTTP Code: 200, Message: OK, Body: {&quot;data&quot;:{&quot;update_bank_accounts&quot;:null},&quot;errors&quot;:[{&quot;message&quot;:&quot;translation missing: en.activemodel.errors.models.bank_account/overdraft.attributes.base.must_be_persisted.&quot;,&quot;locations&quot;:[{&quot;line&quot;:6,&quot;column&quot;:3}],&quot;path&quot;:[&quot;update_bank_accounts&quot;],&quot;message_keys&quot;:[&quot;overdraft.base.error.must_be_persisted&quot;],&quot;extensions&quot;:{&quot;id&quot;:&quot;overdraft.base.error.must_be_persisted&quot;,&quot;message_keys&quot;:[&quot;overdraft.base.error.must_be_persisted&quot;]}}]}
+  Stack Trace:
+./lib/chime/ring/common/request_wrappers.rb:238:in `make_request_with_auth&#x27;
+./lib/chime/ring/common/request_wrappers.rb:296:in `make_request&#x27;
+./lib/chime/ring/services/server_api/request_wrappers.rb:452:in `block in then&#x27;
+./lib/chime/ring/common/api_client.rb:99:in `block in enable_tracing_if_dd_available&#x27;
+./lib/chime/ring/common/api_client.rb:83:in `enable_tracing_if_dd_available&#x27;
+./lib/chime/ring/services/server_api/request_wrappers.rb:450:in `then&#x27;
+./spec/chime/integration/server_api/server_api_spotme_limit_spec.rb:30:in `block (4 levels) in &lt;top (required)&gt;&#x27;</message>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when user settings info query is called returns correct user settings</name>
+    <file>spec/chime/integration/server_api/server_api_user_settings_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_user_settings_spec</classname>
+    <result>success</result>
+    <run_time>14.013133</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when update user settings mutation to disable a setting is called returns correct updated user settings</name>
+    <file>spec/chime/integration/server_api/server_api_user_settings_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_user_settings_spec</classname>
+    <result>success</result>
+    <run_time>14.601215</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when update user settings mutation to enable a setting is called returns correct updated user settings</name>
+    <file>spec/chime/integration/server_api/server_api_user_settings_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_user_settings_spec</classname>
+    <result>success</result>
+    <run_time>11.418107</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Credit Builder Transaction when user with sufficient balance swipes credit card at the merchant returns success for swipe, credit balance and transaction history are updated</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_credit_card_transaction_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_credit_card_transaction_spec</classname>
+    <result>success</result>
+    <run_time>63.559556</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Direct Deposit when user funds account through direct deposit (using individual steps) returns success and checking account balance is updated</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_direct_deposit_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_direct_deposit_spec</classname>
+    <result>success</result>
+    <run_time>31.019035</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Direct Deposit when user funds account through direct deposit (using dict) returns success and checking account balance is updated</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_direct_deposit_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_direct_deposit_spec</classname>
+    <result>success</result>
+    <run_time>26.755617</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when requester member requests money from a chime member (using individual steps) pending request is successfully created</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_chime_member_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_chime_member_spec</classname>
+    <result>success</result>
+    <run_time>55.700343</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when requester member requests money from a chime member (using dict) pending request is successfully created</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_chime_member_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_chime_member_spec</classname>
+    <result>success</result>
+    <run_time>30.261937</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with valid email and password returns success status and correct sign in details</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>40.591263</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with invalid email raises login error</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>19.365373</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with empty email raises login error</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>20.817497</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with invalid password raises login error</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>11.45768</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with empty password raises login error</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>10.74992</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Sign In with repeated incorrect passwords to generate an account lock-out raises login error</name>
+    <file>spec/chime/integration/consumer/consumer_sign_in_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_sign_in_spec</classname>
+    <result>success</result>
+    <run_time>19.19786</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ServerAPI validate Account Info graphql queries/mutations when home core query is called returns correct member bank info</name>
+    <file>spec/chime/integration/server_api/server_api_home_core_query_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_home_core_query_spec</classname>
+    <result>success</result>
+    <run_time>12.273358</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>BAS validate BAS calls validate debit card transfer returns no errors in response</name>
+    <file>spec/chime/integration/bas/bas_spec.rb</file>
+    <classname>spec.chime.integration.bas.bas_spec</classname>
+    <result>success</result>
+    <run_time>40.101099</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>BAS validate BAS calls validate debit card chargeback returns no errors in response</name>
+    <file>spec/chime/integration/bas/bas_spec.rb</file>
+    <classname>spec.chime.integration.bas.bas_spec</classname>
+    <result>success</result>
+    <run_time>19.021548</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>BAS validate BAS calls validate debit card chargeback representment returns no errors in response</name>
+    <file>spec/chime/integration/bas/bas_spec.rb</file>
+    <classname>spec.chime.integration.bas.bas_spec</classname>
+    <result>success</result>
+    <run_time>20.585838</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Invite Friends when invite is sent via email email is sent successfully</name>
+    <file>spec/chime/integration/consumer/consumer_user_invite_friends_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_invite_friends_spec</classname>
+    <result>success</result>
+    <run_time>39.994083</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Debit Transaction when user with sufficient balance through direct deposit swipes debit card at the merchant returns success for swipe, checking balance and transaction history are updated</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_debit_card_transaction_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_debit_card_transaction_spec</classname>
+    <result>success</result>
+    <run_time>40.417457</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Payments-Processing-Platform validate Debit Transaction when user disables debit card transactions and swipes debit card balance is not decreased</name>
+    <file>spec/chime/integration/payments_processing_platform/payments_processing_platform_debit_card_transaction_spec.rb</file>
+    <classname>spec.chime.integration.payments_processing_platform.payments_processing_platform_debit_card_transaction_spec</classname>
+    <result>success</result>
+    <run_time>26.150728</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when user bank account details query is called returns correct member bank info</name>
+    <file>spec/chime/integration/server_api/server_api_bank_account_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_bank_account_spec</classname>
+    <result>success</result>
+    <run_time>40.528624</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Credit Builder Enrollment when user enrolls in a credit builder account returns success status</name>
+    <file>spec/chime/integration/server_api/server_api_enroll_credit_builder_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_enroll_credit_builder_spec</classname>
+    <result>success</result>
+    <run_time>24.003067</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Send Check when new biller is added and a check is sent check transaction appears in user&#x27;s account and appropriate balance is deducted</name>
+    <file>spec/chime/integration/consumer/consumer_user_mail_check_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_mail_check_spec</classname>
+    <result>success</result>
+    <run_time>56.297895</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Move Money when user transfers from checking to credit checking and credit accounts show correct balances</name>
+    <file>spec/chime/integration/server_api/server_api_transfer_funds_checking_to_credit_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_transfer_funds_checking_to_credit_spec</classname>
+    <result>success</result>
+    <run_time>33.049425</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Move Money when user transfers from checking to saving and then back to checking savings and checking accounts show correct balances</name>
+    <file>spec/chime/integration/consumer/consumer_user_transfer_funds_savings_to_checking_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_transfer_funds_savings_to_checking_spec</classname>
+    <result>success</result>
+    <run_time>66.929426</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Dispute Status Widget Visibility when user is in the home screen with disputes in their record dispute widget exists in the response from server_api</name>
+    <file>spec/chime/integration/server_api/server_api_dispute_status_widget_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_dispute_status_widget_spec</classname>
+    <result>success</result>
+    <run_time>45.197264</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Dispute Status Widget Visibility when user is in the home screen with disputes in their record when user has all disputes closed and final_dispute_resolved_at is within 7 days dispute widget exists in the response from server_api</name>
+    <file>spec/chime/integration/server_api/server_api_dispute_status_widget_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_dispute_status_widget_spec</classname>
+    <result>success</result>
+    <run_time>14.23252</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Dispute Status Widget Visibility when user is in the home screen with disputes in their record when user has all disputes closed and final_dispute_resolved_at is over 7 days ago dispute widget does not exist in the response from server_api</name>
+    <file>spec/chime/integration/server_api/server_api_dispute_status_widget_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_dispute_status_widget_spec</classname>
+    <result>success</result>
+    <run_time>16.993638</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Dispute Status Widget Visibility when user is in the home screen with no disputes in their record dispute widget does not exist in the response from server_api</name>
+    <file>spec/chime/integration/server_api/server_api_dispute_status_widget_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_dispute_status_widget_spec</classname>
+    <result>success</result>
+    <run_time>11.53333</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when user data query is called returns correct member info</name>
+    <file>spec/chime/integration/server_api/server_api_user_data_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_user_data_spec</classname>
+    <result>success</result>
+    <run_time>12.586994</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Account Info graphql queries/mutations when user data query is called returns correct member bank info</name>
+    <file>spec/chime/integration/server_api/server_api_user_data_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_user_data_spec</classname>
+    <result>success</result>
+    <run_time>12.132414</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when requester is blocked via a money request pending request is blocked</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_blocked_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_blocked_spec</classname>
+    <result>success</result>
+    <run_time>56.005238</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Request Money when money request is blocked but the user is not authorized to block it pending request is declined</name>
+    <file>spec/chime/integration/server_api/server_api_request_money_blocked_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_request_money_blocked_spec</classname>
+    <result>success</result>
+    <run_time>24.796775</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Autobots validate Autobots calls validate graphql chatbot data query returns chatbot is online response</name>
+    <file>spec/chime/integration/autobots/autobots_spec.rb</file>
+    <classname>spec.chime.integration.autobots.autobots_spec</classname>
+    <result>success</result>
+    <run_time>35.169223</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Ping validate Chime Services are running when Consumer is pinged returns status code 200</name>
+    <file>spec/chime/integration/ping/chime_ping_services_spec.rb</file>
+    <classname>spec.chime.integration.ping.chime_ping_services_spec</classname>
+    <result>success</result>
+    <run_time>5.223568</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Ping validate Chime Services are running when GSim is pinged returns status code 200</name>
+    <file>spec/chime/integration/ping/chime_ping_services_spec.rb</file>
+    <classname>spec.chime.integration.ping.chime_ping_services_spec</classname>
+    <result>success</result>
+    <run_time>5.09819</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Server-API validate Move Money when user transfers from credit to checking checking and credit accounts show correct balances</name>
+    <file>spec/chime/integration/server_api/server_api_transfer_funds_credit_to_checking_spec.rb</file>
+    <classname>spec.chime.integration.server_api.server_api_transfer_funds_credit_to_checking_spec</classname>
+    <result>success</result>
+    <run_time>57.373601</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>Consumer validate Credit Builder Enrollment(CreditDayZero) when chime member signs up and enrolls with credit builder enabled returns success status with correct enrolled accounts</name>
+    <file>spec/chime/integration/consumer/consumer_enroll_credit_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_enroll_credit_spec</classname>
+    <result>success</result>
+    <run_time>16.761065</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>GSim validate Flipper when enable Flipper flag is enabled for an env Flipper is on</name>
+    <file>spec/chime/integration/gsim/gsim_flipper_spec.rb</file>
+    <classname>spec.chime.integration.gsim.gsim_flipper_spec</classname>
+    <result>success</result>
+    <run_time>5.096144</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>GSim validate Flipper when Flipper flag is disabled for an env Flipper is off</name>
+    <file>spec/chime/integration/gsim/gsim_flipper_spec.rb</file>
+    <classname>spec.chime.integration.gsim.gsim_flipper_spec</classname>
+    <result>success</result>
+    <run_time>5.109233</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>GSim validate Flipper when Flipper flag is enabled for a user Flipper is updated for that user</name>
+    <file>spec/chime/integration/gsim/gsim_flipper_spec.rb</file>
+    <classname>spec.chime.integration.gsim.gsim_flipper_spec</classname>
+    <result>success</result>
+    <run_time>14.241356</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>GSim validate Flipper when Flipper flag is enabled for a user Flipper is on for that user</name>
+    <file>spec/chime/integration/gsim/gsim_flipper_spec.rb</file>
+    <classname>spec.chime.integration.gsim.gsim_flipper_spec</classname>
+    <result>success</result>
+    <run_time>11.297861</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>GSim validate Flipper when Flipper flags are configured Flipper flags are correctly set</name>
+    <file>spec/chime/integration/gsim/gsim_flipper_spec.rb</file>
+    <classname>spec.chime.integration.gsim.gsim_flipper_spec</classname>
+    <result>success</result>
+    <run_time>22.102071</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Move Money when user transfers from checking to savings checking and savings accounts show correct balances</name>
+    <file>spec/chime/integration/consumer/consumer_user_transfer_funds_checking_to_savings_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_transfer_funds_checking_to_savings_spec</classname>
+    <result>success</result>
+    <run_time>47.536209</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <items>
+    <name>ConsumerUser validate Move Money when user transfers from checking to savings with insufficient balance returns 302 HTTP error</name>
+    <file>spec/chime/integration/consumer/consumer_user_transfer_funds_checking_to_savings_spec.rb</file>
+    <classname>spec.chime.integration.consumer.consumer_user_transfer_funds_checking_to_savings_spec</classname>
+    <result>success</result>
+    <run_time>25.741152</run_time>
+    <message/>
+    <source>unknown</source>
+  </items>
+  <next_page_token/>
+</root>
