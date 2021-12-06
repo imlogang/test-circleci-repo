@@ -62,7 +62,7 @@ jobs:
       #       chmod u+x ec2-metadata
       #       ./ec2-metadata --help
       # - run: sudo ./ec2-metadata -i
-      - run: echo ls -a
+      - run: ls -a
       - store_test_results:
           path: test-results
 
