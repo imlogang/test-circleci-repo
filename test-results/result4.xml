@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec4" tests="7" skipped="0" failures="1" errors="0" time="503.764025" timestamp="2021-12-04T21:08:10+00:00" hostname="53215b5a5b0d">
+<testsuite name="rspec4" tests="1" skipped="0" failures="0" errors="0" time="91.072989" timestamp="2021-12-03T17:15:50+00:00" hostname="55c38678cb7f">
 <properties>
-<property name="seed" value="23799"/>
+<property name="seed" value="8619"/>
 </properties>
-<testcase classname="spec.chime.integration.consumer.consumer_user_card_activation_spec" name="ConsumerUser validate Debit Card when user activates a valid card returns success status" file="./spec/chime/integration/consumer/consumer_user_card_activation_spec.rb" time="46.884237"></testcase>
-<testcase classname="spec.chime.integration.consumer.consumer_user_card_activation_spec" name="ConsumerUser validate Debit Card when user activates an invalid card returns card activation failure message" file="./spec/chime/integration/consumer/consumer_user_card_activation_spec.rb" time="28.671183"></testcase>
-<testcase classname="spec.chime.integration.finplat.finplat_debit_card_transaction_spec" name="FinPlat validate Debit Transaction when user with sufficient balance through cash-load swipes debit card at the merchant returns success for swipe, checking balance and transaction history are updated" file="./spec/chime/integration/finplat/finplat_debit_card_transaction_spec.rb" time="273.994941"><failure message="&apos;checking&apos; account balance for &apos;hyun.harvey.1638652302670+finplat@chime.com&apos; did not update to 1050.0 after 60 seconds!
-
-********************************************************************************************
-** Please check DataDog trace at: https://app.datadoghq.com/apm/trace/4439651275977427183 **
-********************************************************************************************
-
-Request: POST https://api-v2-qa.chimebank.com/
-Payload: HOME_CORE_QUERY
-
-Response: RuntimeError : HTTP Code: 200, Message: OK, Body: {&quot;data&quot;:{&quot;user&quot;:{&quot;bank_accounts&quot;:[{&quot;id&quot;:&quot;Ga8ubnw2&quot;,&quot;account_type&quot;:&quot;checking&quot;,&quot;balance&quot;:1500.0,&quot;balance_updated_at&quot;:&quot;2021-12-04 03:13:50 PM&quot;,&quot;balances&quot;:{&quot;display&quot;:1500.0,&quot;balance&quot;:1500.0},&quot;active&quot;:true}],&quot;secured_credit_accounts&quot;:[]}}}
-
-Stack Trace:" type="RuntimeError">Failure/Error: raise expectation_error_message
-
-RuntimeError:
-  &apos;checking&apos; account balance for &apos;hyun.harvey.1638652302670+finplat@chime.com&apos; did not update to 1050.0 after 60 seconds!
-
-  ********************************************************************************************
-  ** Please check DataDog trace at: https://app.datadoghq.com/apm/trace/4439651275977427183 **
-  ********************************************************************************************
-
-  Request: POST https://api-v2-qa.chimebank.com/
-  Payload: HOME_CORE_QUERY
-
-  Response: RuntimeError : HTTP Code: 200, Message: OK, Body: {&quot;data&quot;:{&quot;user&quot;:{&quot;bank_accounts&quot;:[{&quot;id&quot;:&quot;Ga8ubnw2&quot;,&quot;account_type&quot;:&quot;checking&quot;,&quot;balance&quot;:1500.0,&quot;balance_updated_at&quot;:&quot;2021-12-04 03:13:50 PM&quot;,&quot;balances&quot;:{&quot;display&quot;:1500.0,&quot;balance&quot;:1500.0},&quot;active&quot;:true}],&quot;secured_credit_accounts&quot;:[]}}}
-
-  Stack Trace:
-./lib/chime/ring/common/request_wrappers.rb:238:in `make_request_with_auth&apos;
-./lib/chime/ring/common/request_wrappers.rb:273:in `make_request_with_timeout&apos;
-./lib/chime/ring/common/request_wrappers.rb:294:in `make_request&apos;
-./lib/chime/ring/services/server_api/request_wrappers.rb:452:in `block in then&apos;
-./lib/chime/ring/common/api_client.rb:99:in `block in enable_tracing_if_dd_available&apos;
-./lib/chime/ring/common/api_client.rb:83:in `enable_tracing_if_dd_available&apos;
-./lib/chime/ring/services/server_api/request_wrappers.rb:450:in `then&apos;
-./lib/chime/ring/services/server_api/request_wrappers.rb:388:in `verify_balance&apos;
-./spec/chime/integration/finplat/finplat_debit_card_transaction_spec.rb:58:in `block (4 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
-<testcase classname="spec.chime.integration.server_api.server_api_user_settings_spec" name="Server-API validate Account Info graphql queries/mutations when user settings info query is called returns correct user settings" file="./spec/chime/integration/server_api/server_api_user_settings_spec.rb" time="39.690269"></testcase>
-<testcase classname="spec.chime.integration.server_api.server_api_user_settings_spec" name="Server-API validate Account Info graphql queries/mutations when update user settings mutation to disable a setting is called returns correct updated user settings" file="./spec/chime/integration/server_api/server_api_user_settings_spec.rb" time="29.678026"></testcase>
-<testcase classname="spec.chime.integration.server_api.server_api_user_settings_spec" name="Server-API validate Account Info graphql queries/mutations when update user settings mutation to enable a setting is called returns correct updated user settings" file="./spec/chime/integration/server_api/server_api_user_settings_spec.rb" time="38.204661"></testcase>
-<testcase classname="spec.chime.integration.server_api.server_api_user_settings_spec" name="Server-API validate Account Info graphql queries/mutations when update user settings card mutation to disable card transactions is called chime_card_transactions is disabled" file="./spec/chime/integration/server_api/server_api_user_settings_spec.rb" time="45.956384"></testcase>
+<testcase classname="spec.chime.integration.payments_processing_platform.payments_processing_platform_credit_card_transaction_spec" name="Payment Processing Platform validate Credit Builder Transaction when user with sufficient balance swipes credit card at the merchant returns success for swipe, credit balance and transaction history are updated" file="./spec/chime/integration/payments_processing_platform/payments_processing_platform_credit_card_transaction_spec.rb" time="91.049547"></testcase>
 </testsuite>
