@@ -62,6 +62,8 @@ jobs:
       #       ./ec2-metadata --help
       # - run: sudo ./ec2-metadata -i
       - run: echo "hello world"
+      - store_test_results:
+          path: test-results
 
 
 
