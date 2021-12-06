@@ -64,7 +64,7 @@ jobs:
       # - run: sudo ./ec2-metadata -i
       - run: ls -a
       - store_test_results:
-          path: /project/test-results
+          path: ./project/test-results
       - store_artifacts:
           path: test-results
 
