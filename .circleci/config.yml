@@ -63,11 +63,12 @@ jobs:
       #       ./ec2-metadata --help
       # - run: sudo ./ec2-metadata -i
       - run: ls -a
+      - run: exit 1
       - store_test_results:
           path: test-results
       - store_artifacts:
           path: test-results
-      - run: exit 1
+
 
 
 
