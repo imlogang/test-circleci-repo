@@ -67,6 +67,7 @@ jobs:
           path: test-results
       - store_artifacts:
           path: test-results
+      - run: exit 1
 
 
 
