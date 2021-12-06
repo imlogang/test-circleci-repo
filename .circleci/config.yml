@@ -48,10 +48,11 @@ jobs:
     #   image: ubuntu-2004-cuda-11.4:202110-01
     # macos:
     #   xcode: 12.5.1
-    resource_class: macos.x86.medium.gen2
+    #resource_class: macos.x86.medium.gen2
+    #working_directory: ~/my-app
     steps:
       - checkout
-      - run: npm -v
+      #- run: npm -v
       # - run: sudo apt-get install cloud-utils
       # - run: ec2metadata --instance-id
       # - python/install-packages
@@ -61,7 +62,7 @@ jobs:
       #       chmod u+x ec2-metadata
       #       ./ec2-metadata --help
       # - run: sudo ./ec2-metadata -i
-      - run: echo "hello world"
+      - run: echo ls -a
       - store_test_results:
           path: test-results
 
