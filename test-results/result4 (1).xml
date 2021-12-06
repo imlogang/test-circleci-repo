@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec4" tests="1" skipped="0" failures="0" errors="0" time="91.072989" timestamp="2021-12-03T17:15:50+00:00" hostname="55c38678cb7f">
+<properties>
+<property name="seed" value="8619"/>
+</properties>
+<testcase classname="spec.chime.integration.payments_processing_platform.payments_processing_platform_credit_card_transaction_spec" name="Payment Processing Platform validate Credit Builder Transaction when user with sufficient balance swipes credit card at the merchant returns success for swipe, credit balance and transaction history are updated" file="./spec/chime/integration/payments_processing_platform/payments_processing_platform_credit_card_transaction_spec.rb" time="91.049547"></testcase>
+</testsuite>

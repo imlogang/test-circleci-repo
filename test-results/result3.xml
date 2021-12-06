@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec3" tests="3" skipped="0" failures="1" errors="0" time="48.060168" timestamp="2021-12-03T17:15:50+00:00" hostname="55c38678cb7f">
+<properties>
+<property name="seed" value="56295"/>
+</properties>
+<testcase classname="spec.chime.integration.consumer.consumer_sign_up_spec" name="Consumer validate Member Sign Up when user&apos;s email is empty returns error for invalid input" file="./spec/chime/integration/consumer/consumer_sign_up_spec.rb" time="7.927905"></testcase>
+<testcase classname="spec.chime.integration.consumer.consumer_sign_up_spec" name="Consumer validate Member Sign Up when user&apos;s password is empty returns error for invalid input" file="./spec/chime/integration/consumer/consumer_sign_up_spec.rb" time="5.125874"></testcase>
+<testcase classname="spec.chime.integration.server_api.server_api_request_money_non_chime_member_spec" name="Server-API validate Request Money when requester member requests money from a non chime member pending request is not created" file="./spec/chime/integration/server_api/server_api_request_money_non_chime_member_spec.rb" time="34.979952"><failure message="Expected response HTTP status code == 200
+
+Actual HTTP status code == 500
+
+********************************************************************************************
+** Please check DataDog trace at: https://app.datadoghq.com/apm/trace/4012721489787476043 **
+********************************************************************************************
+
+Request: POST http://127.0.0.1:3006/ {
+  &quot;input&quot;: {
+    &quot;amount&quot;: 100,
+    &quot;memo&quot;: &quot;Test Request Money&quot;,
+    &quot;to_identifier&quot;: &quot;non_chime_member@random.com&quot;
+  }
+}
+
+Payload: MONEY_REQUEST_MUTATION
+
+Response: Chime::ApiClient::Error : Code: 500, Message: Internal Server Error
+
+Stack Trace:" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(get_status_code).to equal(expected), error_message
+
+  Expected response HTTP status code == 200
+
+  Actual HTTP status code == 500
+
+  ********************************************************************************************
+  ** Please check DataDog trace at: https://app.datadoghq.com/apm/trace/4012721489787476043 **
+  ********************************************************************************************
+
+  Request: POST http://127.0.0.1:3006/ {
+    &quot;input&quot;: {
+      &quot;amount&quot;: 100,
+      &quot;memo&quot;: &quot;Test Request Money&quot;,
+      &quot;to_identifier&quot;: &quot;non_chime_member@random.com&quot;
+    }
+  }
+
+  Payload: MONEY_REQUEST_MUTATION
+
+  Response: Chime::ApiClient::Error : Code: 500, Message: Internal Server Error
+
+  Stack Trace:
+./lib/chime/ring/common/validators.rb:17:in `verify_http_status&apos;
+./spec/chime/integration/server_api/server_api_request_money_non_chime_member_spec.rb:34:in `block (4 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+</testsuite>
