@@ -21,8 +21,8 @@ jobs:
       - run: ls -al unzipped
       - run: pwd
       - persist_to_workspace:
-          root: unzipped
-          path: .
+          root: .
+          path: unzipped
 
   followup:
     docker:
