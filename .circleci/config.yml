@@ -22,8 +22,7 @@ jobs:
       - run: pwd
       - persist_to_workspace:
           root: unzipped
-          # paths:
-          #   - *
+          path: .
 
   followup:
     docker:
