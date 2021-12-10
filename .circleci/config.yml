@@ -11,11 +11,15 @@ jobs:
     working_directory: /mnt/ramdisk
     steps:
       - checkout
-      - run: echo "Hello world"
+      - run: ls -a
+      - run: 
+          command: |
+          sudo apt-get install unzip
+          unzip rando_file/dummy.txt.zip -d unzipped
       - persist_to_workspace:
           root: /mnt/ramdisk
           paths:
-            - test-results
+            - unzipped
 
   followup:
     docker:
