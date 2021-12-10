@@ -39,20 +39,24 @@ version: 2.1
 
 jobs:
   regular:
-    docker:
-      - image: cimg/node:17.1.0
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+    # docker:
+    #   - image: cimg/node:17.1.0
+    #     auth:
+    #       username: $DOCKER_USERNAME
+    #       password: $DOCKER_PASSWORD
     # machine:
     #   image: ubuntu-2004-cuda-11.4:202110-01
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: arm.large
     # macos:
     #   xcode: 12.5.1
     #resource_class: macos.x86.medium.gen2
     #working_directory: ~/my-app
     steps:
       - checkout
-      #- run: npm -v
+      - run: npm -v
+      - run: echo "Hello world"
       # - run: sudo apt-get install cloud-utils
       # - run: ec2metadata --instance-id
       # - python/install-packages
@@ -61,13 +65,13 @@ jobs:
       #       wget http://s3.amazonaws.com/ec2metadata/ec2-metadata
       #       chmod u+x ec2-metadata
       #       ./ec2-metadata --help
-      # - run: sudo ./ec2-metadata -i
-      - run: ls -a
-      - run: exit 1
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
+      # # - run: sudo ./ec2-metadata -i
+      # - run: ls -a
+      # - run: exit 1
+      # - store_test_results:
+      #     path: test-results
+      # - store_artifacts:
+      #     path: test-results
 
 
 
