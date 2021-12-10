@@ -11,14 +11,15 @@ jobs:
     working_directory: /mnt/ramdisk
     steps:
       - checkout
-      - run: ls -a
+      - run: ls -al
       - run: mkdir unzipped
-      - run: ls unzipped
+      - run: ls -al unzipped
       - run: 
           command: |
             sudo apt-get install unzip
             unzip rando_file/dummy.txt.zip -d unzipped
-      - run: ls unzipped
+      - run: ls -al unzipped
+      - run: pwd
       - persist_to_workspace:
           root: /mnt/ramdisk
           paths:
