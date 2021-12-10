@@ -8,6 +8,7 @@ jobs:
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
+    working_directory: /mnt/ramdisk
     steps:
       - checkout
       - run: echo "Hello world"
@@ -22,6 +23,7 @@ jobs:
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
+    working_directory: /mnt/ramdisk
     steps:
       - attach_workspace:
           at: /mnt/ramdisk
