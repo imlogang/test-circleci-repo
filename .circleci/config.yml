@@ -48,7 +48,7 @@ jobs:
     #   image: ubuntu-2004-cuda-11.4:202110-01
     machine:
       image: ubuntu-2004:202101-01
-    resource_class: arm.large
+    resource_class: arm.large #plz use aws
     # macos:
     #   xcode: 12.5.1
     #resource_class: macos.x86.medium.gen2
