@@ -14,8 +14,8 @@ jobs:
       - run: ls -a
       - run: 
           command: |
-          sudo apt-get install unzip
-          unzip rando_file/dummy.txt.zip -d unzipped
+            sudo apt-get install unzip
+            unzip rando_file/dummy.txt.zip -d unzipped
       - persist_to_workspace:
           root: /mnt/ramdisk
           paths:
