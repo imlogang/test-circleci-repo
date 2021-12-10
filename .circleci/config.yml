@@ -12,10 +12,12 @@ jobs:
     steps:
       - checkout
       - run: ls -a
+      - run: ls unzipped
       - run: 
           command: |
             sudo apt-get install unzip
             unzip rando_file/dummy.txt.zip -d unzipped
+      - run: ls unzipped
       - persist_to_workspace:
           root: /mnt/ramdisk
           paths:
