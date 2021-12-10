@@ -21,8 +21,9 @@ jobs:
       - run: ls -al unzipped
       - run: pwd
       - persist_to_workspace:
-          root: .
-          path: unzipped
+          root: /mnt/ramdisk
+          paths:
+            - unzipped
 
   followup:
     docker:
