@@ -20,10 +20,6 @@ jobs:
             unzip rando_file/dummy.txt.zip -d unzipped
       - run: ls -al unzipped
       - run: pwd
-      - persist_to_workspace:
-          root: /mnt/ramdisk
-          paths:
-            - unzipped
 
   followup:
     docker:
@@ -35,6 +31,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /mnt/ramdisk
+      - run: ls -al unzipped
 
 workflows:
   normal:
