@@ -11,6 +11,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello world"
+      - run: echo "surface/subterrain branch" #test for pull request
 
 workflows:
   normal:
