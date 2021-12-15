@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: echo "Hello world"
 
- workflows:
+workflows:
   normal:
     jobs:
       - regular
