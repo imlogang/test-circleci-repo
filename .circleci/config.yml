@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello world"
-      - run: echo "surface branch"
+      - run: echo "surface/subterrain branch"
 
 workflows:
   normal:
