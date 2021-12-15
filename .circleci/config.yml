@@ -8,43 +8,58 @@ jobs:
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
-    working_directory: /mnt/ramdisk
     steps:
       - checkout
-      - run: ls -al
-      - run: mkdir unzipped
-      - run: ls -al unzipped
-      - run: 
-          command: |
-            sudo apt-get install unzip
-            unzip rando_file/dummy.txt.zip -d unzipped
-      - run: ls -al unzipped
-      - run: pwd
+      - run: echo "Hello world"
 
-  followup:
-    docker:
-      - image: cimg/node:17.1.0
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
-    working_directory: /mnt/ramdisk
-    steps:
-      - attach_workspace:
-          at: /mnt/ramdisk
-      - run: ls -al unzipped
-
-workflows:
+ workflows:
   normal:
     jobs:
       - regular
-      - followup:
-          requires:
-            - regular
-
 
 
 
 # ################################################# STORAGE ###########################################################
+# jobs:
+#   regular:
+#     docker:
+#       - image: cimg/node:17.1.0
+#         auth:
+#           username: $DOCKER_USERNAME
+#           password: $DOCKER_PASSWORD
+#     working_directory: /mnt/ramdisk
+#     steps:
+#       - checkout
+#       - run: ls -al
+#       - run: mkdir unzipped
+#       - run: ls -al unzipped
+#       - run: 
+#           command: |
+#             sudo apt-get install unzip
+#             unzip rando_file/dummy.txt.zip -d unzipped
+#       - run: ls -al unzipped
+#       - run: pwd
+
+#   followup:
+#     docker:
+#       - image: cimg/node:17.1.0
+#         auth:
+#           username: $DOCKER_USERNAME
+#           password: $DOCKER_PASSWORD
+#     working_directory: /mnt/ramdisk
+#     steps:
+#       - run: ls -al unzipped
+#       - persist_to_workspace:
+#           root: .
+#           path: 
+
+# workflows:
+#   normal:
+#     jobs:
+#       - regular
+#       - followup:
+#           requires:
+#             - regular
 # # YAML anchor "build" to prevent duplication in CircleCI jobs section.
 # version: 2.1
 
