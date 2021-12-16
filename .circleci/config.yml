@@ -1,5 +1,5 @@
 # YAML anchor "build" to prevent duplication in CircleCI jobs section.
-version: 2.1
+version: 2
 
 jobs:
   regular:
@@ -14,6 +14,7 @@ jobs:
       - run: echo "surface/subterrain branch" #test for pull request
 
 workflows:
+  version: 2
   normal:
     jobs:
       - regular
