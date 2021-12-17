@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello world"
+      - run: sudo apt-get update
       - run: echo "surface/subterrain branch" #test for pull request
 
 workflows:
