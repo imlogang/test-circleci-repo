@@ -3,11 +3,9 @@ version: 2.1
 
 jobs:
   regular:
-    docker:
-      - image: golang@sha256:4918412049183afe42f1ecaf8f5c2a88917c2eab153ce5ecf4bf2d55c1507b74
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+    machine: # executor type
+      image: ubuntu-2004:202010-01 
+    resource_class: xlarge
     steps:
       - checkout
       - run: echo "Hello world"
