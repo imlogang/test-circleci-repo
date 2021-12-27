@@ -2,22 +2,25 @@
 version: 2.1
 
 jobs:
-  regular:
-    machine: # executor type
-      image: ubuntu-2004:202010-01 
-    resource_class: xlarge
+
+  persist:
+    docker:
+      - image: cimg/node:17.1.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     steps:
-      - checkout
-      - run: echo "Hello world"
-      - run: sudo apt-get update
-      - run: echo "surface/subterrain branch" #test for pull request
+      - run:
+          command: |
+            pwd
+            cd .
+            cd .
+            pwd
 
 workflows:
-  normal:
+  testing:
     jobs:
-      - regular
-
-
+      - persist
 
 # ################################################# STORAGE ###########################################################
 # jobs:
@@ -148,8 +151,54 @@ workflows:
 #       - attach_workspace:
 #           at: /mnt/ramdisk
 
+# jobs:
+#   regular:
+#     machine: # executor type
+#       image: ubuntu-2004:202010-01 
+#     resource_class: xlarge
+#     steps:
+#       - checkout
+#       - run: echo "Hello world"
+#       - run: sudo apt-get update
+#       - run: echo "surface/subterrain branch" #test for pull request
+
+# workflows:
+#   normal:
+#     jobs:
+#       - regular
 
 
+# workflow:
+#   code_example:
+#     jobs:
+#       - build_initiatives
+#       - hold:
+#           type: approval
+#           requires:
+#             - build_initiatives
+#       - check_vulnerabilities:
+#           name: check_initiatives_vulnerabilities
+#           service: initiatives
+#           requires:
+#             - build_initiatives
+#           context: snyk
+#           filters:
+#             branches:
+#               only:
+#                 - develop
+#                 - master
+#       - check_vulnerabilities_hold:
+#           name: check_initiatives_vulnerabilities
+#           service: initiatives
+#           requires:
+#             - build_initiatives
+#             - hold
+#           context: snyk
+#           filters:
+#             branches:
+#               ignore:
+#                 - develop
+#                 - master
 
 # #   # api-job:
 # #   #   docker:
