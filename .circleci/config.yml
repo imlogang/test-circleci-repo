@@ -10,7 +10,7 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: echo <<pipeline.id>>
+      - run: echo <<pipeline.number>>
 
 workflows:
   testing:
