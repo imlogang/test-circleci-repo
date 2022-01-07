@@ -5,7 +5,7 @@ jobs:
     machine: true
     resource_class: orb-space/small
     steps:
-      - run: echo 'Hi I'm on Runners!'
+      - run: echo "Hi I'm on Runners!"
 
 workflows:
   testing:
