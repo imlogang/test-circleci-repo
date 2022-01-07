@@ -1,21 +1,16 @@
-# YAML anchor "build" to prevent duplication in CircleCI jobs section.
 version: 2.1
 
 jobs:
-
-  persist:
-    docker:
-      - image: cimg/node:17.1.0
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+  runner:
+    machine: true
+    resource_class: orb-space/small
     steps:
-      - run: echo <<pipeline.number>>
+      - run: echo 'Hi I'm on Runners!'
 
 workflows:
   testing:
     jobs:
-      - persist
+      - runner
 
 # ################################################# STORAGE ###########################################################
 # jobs:
