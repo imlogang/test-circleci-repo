@@ -27,7 +27,7 @@ jobs:
 workflows:
   terraform-validate:
     jobs:
-      - terraform-validate:
+      - terraform-validate
 
 # ################################################# STORAGE ###########################################################
 # jobs:
