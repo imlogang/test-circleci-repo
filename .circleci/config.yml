@@ -1,7 +1,11 @@
 version: 2.1
 jobs:
   normal:
-    executor: cimg/node:17.1.0
+    docker: 
+      - image: cimg/node:17.1.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     steps:
       - checkout
       - run: 
