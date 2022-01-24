@@ -1,14 +1,15 @@
 version: 2.1
 
 jobs:
-  build:
-    macos:
-      xcode: 12.5.1
-
+  normal:
+    machine: true
     steps:
-      # Commands will execute in macOS container
-      # with Xcode 11.3 installed
-      - run: xcodebuild -version
+      - checkout
+
+workflows:
+  workflow:
+    jobs:
+      - normal
 
 # ################################################# STORAGE ###########################################################
 
