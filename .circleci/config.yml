@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   x:
     docker:
-      - image: cimg/node:17.1.0
+      - image: cimg/base:stable
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
