@@ -1,15 +1,19 @@
 version: 2.1
 
 jobs:
-  normal:
-    machine: true
+  x:
+    docker:
+      - image: cimg/node:17.1.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
     steps:
-      - checkout
+      - run: echo $CIRCLE_PULL_REQUEST
 
 workflows:
   workflow:
     jobs:
-      - normal
+      - x
 
 # ################################################# STORAGE ###########################################################
 
