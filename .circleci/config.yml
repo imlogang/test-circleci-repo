@@ -9,7 +9,7 @@ jobs:
           password: $DOCKER_PASSWORD
     steps:
       - run: echo ${CIRCLE_PULL_REQUEST##*/}
-      - run: echo "export ${CIRCLE_PULL_REQUEST##*/}='TF_VAR_CIRCLE_PR_NUMBER'" >> $BASH_ENV
+      - run: echo "export TF_VAR_CIRCLE_PR_NUMBER=${CIRCLE_PULL_REQUEST##*/}" >> $BASH_ENV
       - run: echo TF_VAR_CIRCLE_PR_NUMBER
 
       #testing some changes
