@@ -9,6 +9,7 @@ jobs:
           password: $DOCKER_PASSWORD
     steps:
       - run: echo $CIRCLE_PULL_REQUEST
+      - run: echo "hello I've made a pr"
 
 workflows:
   workflow:
