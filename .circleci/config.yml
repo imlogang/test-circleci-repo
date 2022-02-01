@@ -10,6 +10,7 @@ jobs:
           if [ "$CIRCLE_BRANCH" = "main" ]; then
               circleci step halt
           fi
+      - run: echo "Hello world"
 workflows:
   main_workflow:
     jobs:
