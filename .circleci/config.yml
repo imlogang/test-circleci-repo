@@ -1,19 +1,19 @@
 version: 2.1
 
 jobs:
-  x:
-    docker:
-      - image: cimg/base:stable
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+  main:
+    machine:
+      enabled: true
+      image: ubuntu-2004:202111-01 
     steps:
-      - run: echo $CIRCLE_PULL_REQUEST
-
+      - run: |
+          if [ "$CIRCLE_BRANCH" = "main" ]; then
+              circleci step halt
+          fi
 workflows:
-  workflow:
+  main_workflow:
     jobs:
-      - x
+      - main
 
 # ################################################# STORAGE ###########################################################
 
