@@ -7,7 +7,7 @@ jobs:
       image: ubuntu-2004:202111-01 
     steps:
       - run: |
-          if [ "$CIRCLE_BRANCH" = "main" ]; then
+          if [ "$CIRCLE_BRANCH" = "master" ]; then
               circleci step halt
           fi
       - run: echo "Hello world"
