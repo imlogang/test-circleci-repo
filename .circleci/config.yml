@@ -15,7 +15,7 @@ jobs:
           condition:
             or:
               - matches: 
-                  pattern: "PRODUCTION"
+                  pattern: "SANDBOX"
                   value: << pipeline.parameters.test_value >>
           steps:
             - run: echo "Hello world!"
