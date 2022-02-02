@@ -13,9 +13,7 @@ jobs:
       - run: echo $SOME_VALUE
       - when:
           condition:
-            or:
-              - equal: [ "SANDBOX", ${SOME_VALUE} ]
-              - equal: [ "PRODUCTION", ${SOME_VALUE} ]
+            matches: [ pattern: "PRODUCTION", value: $SOME_VALUE ]
           steps:
             - run: echo "Hello world!"
 workflows:
