@@ -1,7 +1,7 @@
 version: 2.1
 
 parameters:
-  collectstatic_var:
+  test_value:
     type: string
     default: SANDBOX
 jobs:
@@ -9,7 +9,7 @@ jobs:
     docker:
       - image: cimg/node:17.1.0
     steps:
-      - run: echo "$INIT_VALUE == << parameters.collectstatic_var >>"
+      - run: echo "$INIT_VALUE == << parameters.test_value >>"
       - run: echo "export SOME_VALUE=$INIT_VALUE" >> $BASH_ENV
       - when:
           condition:
