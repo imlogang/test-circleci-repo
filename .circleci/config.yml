@@ -11,6 +11,7 @@ jobs:
     steps:
       - run: echo "$INIT_VALUE == << pipeline.parameters.test_value >>"
       - run: echo "export SOME_VALUE=$INIT_VALUE" >> $BASH_ENV
+      - run: echo $SOME_VALUE
       - when:
           condition:
             or:
