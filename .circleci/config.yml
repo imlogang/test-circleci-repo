@@ -13,7 +13,8 @@ jobs:
       - run: echo $SOME_VALUE
       - when:
           condition:
-            matches: [ pattern: "PRODUCTION", value: $SOME_VALUE ]
+            or:
+              - matches: [ pattern: "PRODUCTION", value: $SOME_VALUE ]
           steps:
             - run: echo "Hello world!"
 workflows:
