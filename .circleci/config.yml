@@ -14,9 +14,10 @@ jobs:
       - when:
           condition:
             or:
-              - matches: 
-                  pattern: "SANDBOX"
-                  value: $SOME_VALUE
+              - equal: [ "SANDBOX", << pipeline.parameters.test_value >> ]
+              # - matches: 
+                  # pattern: "SANDBOX"
+                  # value: $SOME_VALUE
           steps:
             - run: echo "Hello world!"
 workflows:
