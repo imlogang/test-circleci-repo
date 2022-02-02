@@ -3,8 +3,7 @@ version: 2.1
 parameters:
   collectstatic_var:
     type: string
-    default: "SANDBOX"
-
+    default: SANDBOX
 jobs:
   main:
     docker:
@@ -22,7 +21,7 @@ workflows:
   main_workflow:
     jobs:
       - main
-      
+
 # ################################################# STORAGE ###########################################################
 
 # version: 2.1
