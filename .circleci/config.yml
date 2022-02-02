@@ -1,21 +1,28 @@
 version: 2.1
 
+parameters:
+  collectstatic_var:
+    type: string
+    default: "SANDBOX"
+
 jobs:
   main:
-    machine:
-      enabled: true
-      image: ubuntu-2004:202111-01 
+    docker:
+      - image: cimg/node:17.1.0
     steps:
-      - run: 
-          command: |
-            if [ "$CIRCLE_BRANCH" = "master" ]; then
-                circleci step halt
-            fi
-      - run: echo "Hello world"
+      - run: echo "export SOME_VALUE=<< parameters.collectstatic_var >>" >> $BASH_ENV
+      - when:
+          condition:
+            or:
+              - equal: [ "SANDBOX", $SOME_VALUE ]
+              - equal: [ "PRODUCTION", $SOME_VALUE ]
+          steps:
+            - run: echo "Hello world!"
 workflows:
   main_workflow:
     jobs:
       - main
+      
 # ################################################# STORAGE ###########################################################
 
 # version: 2.1
