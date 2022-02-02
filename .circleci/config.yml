@@ -9,7 +9,8 @@ jobs:
     docker:
       - image: cimg/node:17.1.0
     steps:
-      - run: echo "export SOME_VALUE=<< parameters.collectstatic_var >>" >> $BASH_ENV
+      - run: echo "$INIT_VALUE == << parameters.collectstatic_var >>"
+      - run: echo "export SOME_VALUE=$INIT_VALUE" >> $BASH_ENV
       - when:
           condition:
             or:
