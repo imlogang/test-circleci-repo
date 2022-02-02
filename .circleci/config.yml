@@ -14,8 +14,8 @@ jobs:
       - when:
           condition:
             or:
-              - equal: [ "SANDBOX", $SOME_VALUE ]
-              - equal: [ "PRODUCTION", $SOME_VALUE ]
+              - equal: [ "SANDBOX", ${SOME_VALUE} ]
+              - equal: [ "PRODUCTION", ${SOME_VALUE} ]
           steps:
             - run: echo "Hello world!"
 workflows:
