@@ -16,7 +16,7 @@ jobs:
             or:
               - matches: 
                   pattern: "PRODUCTION"
-                  value: << test_value >>
+                  value: << pipeline.parameters.test_value >>
           steps:
             - run: echo "Hello world!"
 workflows:
