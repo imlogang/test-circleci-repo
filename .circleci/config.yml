@@ -9,7 +9,7 @@ jobs:
     docker:
       - image: cimg/node:17.1.0
     steps:
-      - run: echo "$INIT_VALUE == << parameters.test_value >>"
+      - run: echo "$INIT_VALUE == << parameters.testb_value >>"
       - run: echo "export SOME_VALUE=$INIT_VALUE" >> $BASH_ENV
       - when:
           condition:
