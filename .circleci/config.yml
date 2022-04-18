@@ -1,29 +1,21 @@
 version: 2.1
 
-parameters:
-  test_value:
-    type: string
-    default: SANDBOX
+orbs:
+  macos: circleci/macos@2.1.0
+  ruby: circleci/ruby@1.7.1
+
 jobs:
-  main:
+  android-build:
     docker:
-      - image: cimg/node:17.1.0
+      - image: cimg/android:2022.03.1-node
+    resource_class: xlarge
     steps:
-      - run: echo "export SOME_VALUE='<< pipeline.parameters.test_value >>'" >> $BASH_ENV
-      - run: echo $SOME_VALUE
-      - when:
-          condition:
-            or:
-              - equal: [ "SANDBOX", $SOME_VALUE ]
-              # - matches: 
-                  # pattern: "SANDBOX"
-                  # value: $SOME_VALUE
-          steps:
-            - run: echo "Hello world!"
-workflows:
-  main_workflow:
-    jobs:
-      - main
+      - checkout
+      - run:
+          name: "Read ruby version"
+          command: echo 'export RUBY_VERSION="$(cat ./js/android/.ruby-version)"' >> $BASH_ENV
+      - ruby/install:
+          version: $RUBY_VERSION
 
 # ################################################# STORAGE ###########################################################
 
