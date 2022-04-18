@@ -21,7 +21,7 @@ jobs:
           command: echo 'export RUBY_VERSION="3.1.2"' >> $BASH_ENV
       - run: echo $RUBY_VERSION
       - ruby/install:
-          version: << parameters.ruby_version >>
+          version: << pipeline.parameters.ruby_version >>
 
 workflows:
   main:
