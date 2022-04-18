@@ -17,6 +17,11 @@ jobs:
       - ruby/install:
           version: $RUBY_VERSION
 
+workflows:
+  main:
+    jobs:
+      - android-build
+
 # ################################################# STORAGE ###########################################################
 
 # version: 2.1
