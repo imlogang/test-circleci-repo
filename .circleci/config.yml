@@ -4,6 +4,11 @@ orbs:
   macos: circleci/macos@2.1.0
   ruby: circleci/ruby@1.7.1
 
+parameters:
+  ruby_version:
+    type: string
+    value: "3.1.2"
+
 jobs:
   android-build:
     docker:
@@ -16,7 +21,7 @@ jobs:
           command: echo 'export RUBY_VERSION="3.1.2"' >> $BASH_ENV
       - run: echo $RUBY_VERSION
       - ruby/install:
-          version: ${RUBY_VERSION}
+          version: << parameters.ruby_version >>
 
 workflows:
   main:
