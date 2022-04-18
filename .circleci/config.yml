@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: "Read ruby version"
-          command: echo 'export RUBY_VERSION="$(cat ./js/android/.ruby-version)"' >> $BASH_ENV
+          command: echo 'export RUBY_VERSION="3.1.2"' >> $BASH_ENV
       - ruby/install:
           version: $RUBY_VERSION
 
