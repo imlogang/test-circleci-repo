@@ -14,6 +14,7 @@ jobs:
       - run:
           name: "Read ruby version"
           command: echo 'export RUBY_VERSION="3.1.2"' >> $BASH_ENV
+      - run: echo $RUBY_VERSION
       - ruby/install:
           version: $RUBY_VERSION
 
