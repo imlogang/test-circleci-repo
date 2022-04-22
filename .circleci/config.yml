@@ -7,13 +7,13 @@ orbs:
 parameters:
   r_class:
     type: string
-    default: "small "
+    default: "small"
 
 jobs:
   android-build:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
-    resource_class: << pipeline.parameters.r_class >>
+    resource_class: small
     steps:
       - checkout
       - run:
