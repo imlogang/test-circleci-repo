@@ -5,23 +5,21 @@ orbs:
   ruby: circleci/ruby@1.7.1
 
 parameters:
-  ruby_version:
+  r_class:
     type: string
-    default: "3.1.2"
+    default: "large"
 
 jobs:
   android-build:
     docker:
       - image: cimg/android:2022.03.1-node
-    resource_class: medium
+    resource_class: << pipeline.parameters.r_class >>
     steps:
       - checkout
       - run:
           name: "Read ruby version"
           command: echo 'export RUBY_VERSION="3.1.2"' >> $BASH_ENV
       - run: echo $RUBY_VERSION
-      - ruby/install:
-          version: << pipeline.parameters.ruby_version >>
 
 workflows:
   main:
