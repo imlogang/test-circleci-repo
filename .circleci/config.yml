@@ -19,7 +19,9 @@ jobs:
       - run: 
           command: |
             circleci version
+            echo "#####################################"
             cat /home/ubuntu/.bashrc
+            echo "#####################################"
             cat ~/.bashrc
 workflows:
   main:
