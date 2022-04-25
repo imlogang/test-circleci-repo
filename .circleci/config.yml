@@ -16,7 +16,11 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: circleci version
+      - run: 
+          command: |
+            circleci version
+            cat /home/ubuntu/.bashrc
+            cat ~/.bashrc
 workflows:
   main:
     jobs:
