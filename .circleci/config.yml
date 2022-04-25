@@ -11,16 +11,12 @@ parameters:
 
 jobs:
   android-build:
-    docker:
-      - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
-    resource_class: small
+    machine:
+      # CPU: 2 | RAM: 8GB | HD: 100GB
+      image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run:
-          name: terraform version
-          command: |
-            terraform version 
-
+      - run: circleci
 workflows:
   main:
     jobs:
