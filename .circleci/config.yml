@@ -16,7 +16,7 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: 
+      - rue[okrmtoen: 
           command: |
             circleci version
             echo "#####################################"
