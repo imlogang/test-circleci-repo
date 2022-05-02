@@ -12,7 +12,7 @@ parameters:
 jobs:
   very-fun-time-build:
     docker:
-      image: cimg/base:2022.04
+      - image: cimg/base:2022.04
     steps:
       - run: ls /
       - run: sudo apt-get update
