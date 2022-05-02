@@ -10,23 +10,17 @@ parameters:
     default: "small"
 
 jobs:
-  android-build:
-    machine:
-      # CPU: 2 | RAM: 8GB | HD: 100GB
-      image: ubuntu-2004:202111-02
+  very-fun-time-build:
+    docker:
+      image: cimg/base:2022.04
     steps:
-      - checkout
-      - rue[okrmtoen: 
-          command: |
-            circleci version
-            echo "#####################################"
-            cat /home/ubuntu/.bashrc
-            echo "#####################################"
-            cat ~/.bashrc
+      - run: ls /
+      - run: sudo apt-get update
+
 workflows:
   main:
     jobs:
-      - android-build
+      - very-fun-time-build
 
 # ################################################# STORAGE ###########################################################
 
