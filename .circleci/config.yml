@@ -15,12 +15,18 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.5-browsers
     steps:
-      - browsers/install-browser-tools
+      - browsers/install-browser-tools # todo
 
 workflows:
   main:
     jobs:
-      - very-fun-time-build
+      - very-fun-time-build:
+          name: test_name
+  secondary:
+    jobs:
+      - very-fun-time-build:
+          name: test_name
+
 
 # ################################################# STORAGE ###########################################################
 
