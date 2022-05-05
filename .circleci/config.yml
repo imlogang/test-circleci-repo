@@ -30,6 +30,10 @@ workflows:
   main:
     jobs:
       - very-fun-time-build:
+          name: test_name_but_different
+          workflow_name: main
+          test: small
+      - very-fun-time-build:
           name: test_name
           workflow_name: main
           test: small
