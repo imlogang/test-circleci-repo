@@ -9,6 +9,9 @@ parameters:
   r_class:
     type: string
     default: "small"
+  e2e_tests_workflow:
+    default: false
+    type: boolean
 
 jobs:
   very-fun-time-build:
@@ -31,6 +34,7 @@ workflows:
           workflow_name: main
           test: small
   secondary:
+    when: << pipeline.parameters.e2e_tests_workflow >>
     jobs:
       - very-fun-time-build:
           name: test_name
