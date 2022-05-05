@@ -16,6 +16,8 @@ jobs:
       test:
         type: string
         default: small
+      workflow_name:
+        type: string
     machine:
       image: ubuntu-2004:202010-01
     steps:
