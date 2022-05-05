@@ -12,8 +12,12 @@ parameters:
 
 jobs:
   very-fun-time-build:
-    docker:
-      - image: cimg/ruby:2.7.5-browsers
+    parameters:
+      test:
+        type: string
+        default: small
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - browsers/install-browser-tools # todo
 
@@ -22,10 +26,14 @@ workflows:
     jobs:
       - very-fun-time-build:
           name: test_name
+          workflow_name: main
+          test: small
   secondary:
     jobs:
       - very-fun-time-build:
           name: test_name
+          workflow_name: secondary
+          test: small
 
 
 # ################################################# STORAGE ###########################################################
