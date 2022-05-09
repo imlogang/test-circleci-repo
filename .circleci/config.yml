@@ -49,7 +49,7 @@ workflows:
       - test:
           matrix:
             parameters:
-              - ruby-simple: ["2", "3"]
+              ruby-simple: ["2", "3"]
           # parameters:
           #     ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >>
 
