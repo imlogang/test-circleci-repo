@@ -38,7 +38,7 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: echo << matrix.parameters.ruby-simple >>
+      - run: echo << matrix.ruby-simple >>
       # - run: echo << parameters.ruby-version >>
 
 
