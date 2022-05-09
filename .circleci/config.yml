@@ -12,6 +12,12 @@ parameters:
   e2e_tests_workflow:
     default: false
     type: boolean
+  test-2:
+    type: string
+    default: "2.7.3"
+  test-3:
+    type: string
+    default: "3.0.3"
 
 jobs:
   very-fun-time-build:
@@ -25,25 +31,27 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - browsers/install-browser-tools # todo
+  test:
+    docker:
+      - image: cimg/node:17.1.0
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+    steps:
+      - run: echo << parameters.ruby-version >>
+      - run: echo << matrix.ruby-simple >>
 
 workflows:
   main:
     jobs:
-      - very-fun-time-build:
-          name: test_name_but_different
-          workflow_name: main
-          test: small
-      - very-fun-time-build:
-          name: test_name
-          workflow_name: main
-          test: small
-  secondary:
-    when: << pipeline.parameters.e2e_tests_workflow >>
-    jobs:
-      - very-fun-time-build:
-          name: test_name
-          workflow_name: secondary
-          test: small
+      - test:
+          name: << matrix.ruby-simple >>
+          matrix:
+            parameters:
+              ruby-simple: ["test-2", "test-3"]
+          parameters:
+              ruby-version: <<pipeline.parameters.[<< matrix.ruby-simple >>]>>
+
 
 
 # ################################################# STORAGE ###########################################################
