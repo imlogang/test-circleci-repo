@@ -47,7 +47,6 @@ workflows:
   main:
     jobs:
       - test:
-          name: test-<< matrix.ruby-simple >>
           matrix:
             parameters:
               ruby-simple: ["2", "3"]
