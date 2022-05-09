@@ -12,10 +12,10 @@ parameters:
   e2e_tests_workflow:
     default: false
     type: boolean
-  test-2:
+  2:
     type: string
     default: "2.7.3"
-  test-3:
+  3:
     type: string
     default: "3.0.3"
 
@@ -46,10 +46,10 @@ workflows:
   main:
     jobs:
       - test:
-          name: << matrix.ruby-simple >>
+          name: test-<< matrix.ruby-simple >>
           matrix:
             parameters:
-              ruby-simple: ["test-2", "test-3"]
+              ruby-simple: ["2", "3"]
           # parameters:
           #     ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >>
 
