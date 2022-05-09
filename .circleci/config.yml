@@ -12,12 +12,6 @@ parameters:
   e2e_tests_workflow:
     default: false
     type: boolean
-  2:
-    type: string
-    default: "2.7.3"
-  3:
-    type: string
-    default: "3.0.3"
 
 jobs:
   very-fun-time-build:
@@ -36,6 +30,15 @@ jobs:
       ruby-simple:
         type: string
         default: ""
+      ruby-version:
+        type: string
+        default: ""
+      2:
+        type: string
+        default: "2.7.3"
+      3:
+        type: string
+        default: "3.0.3"
     docker:
       - image: cimg/node:17.1.0
         auth:
@@ -43,7 +46,7 @@ jobs:
           password: $DOCKER_PASSWORD
     steps:
       - checkout
-      # - run: echo "<< matrix.ruby-simple >>"
+       - run: echo << matrix.ruby-simple >>
       # - run: echo << parameters.ruby-version >>
 
 
@@ -51,6 +54,7 @@ workflows:
   main:
     jobs:
       - test:
+          name: test-<< matrix.ruby-simple >>
           matrix:
             parameters:
               ruby-simple: ["2", "3"]
