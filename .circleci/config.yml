@@ -47,7 +47,7 @@ jobs:
     steps:
       - checkout
       - run: echo << parameters.ruby-simple >>
-      - run: echo << parameters.\\<< parameters.ruby-simple >> >>
+      - run: echo << parameters.${<< parameters.ruby-simple >>} >>
 
 
 workflows:
