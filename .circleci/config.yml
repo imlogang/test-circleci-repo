@@ -32,6 +32,10 @@ jobs:
     steps:
       - browsers/install-browser-tools # todo
   test:
+    parameters:
+      ruby-simple:
+        type: string
+        default: ""
     docker:
       - image: cimg/node:17.1.0
         auth:
