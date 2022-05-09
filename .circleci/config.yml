@@ -38,8 +38,9 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: echo << parameters.ruby-version >>
       - run: echo << matrix.ruby-simple >>
+      # - run: echo << parameters.ruby-version >>
+
 
 workflows:
   main:
@@ -49,8 +50,8 @@ workflows:
           matrix:
             parameters:
               ruby-simple: ["test-2", "test-3"]
-          parameters:
-              ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >>
+          # parameters:
+          #     ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >>
 
 
 
