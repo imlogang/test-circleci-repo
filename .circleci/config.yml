@@ -51,7 +51,7 @@ workflows:
             parameters:
               ruby-simple: ["2", "3"]
           # parameters:
-          #     ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >>
+          #     ruby-version: << pipeline.parameters.\<< matrix.ruby-simple \>> >> #
 
 
 
