@@ -32,7 +32,6 @@ jobs:
     steps:
       - browsers/install-browser-tools # todo
   test:
-    name: test-<< matrix.parameters.ruby-simple >>
     docker:
       - image: cimg/node:17.1.0
         auth:
@@ -47,6 +46,7 @@ workflows:
   main:
     jobs:
       - test:
+          name: test-<< matrix.parameters.ruby-simple >>
           matrix:
             parameters:
               ruby-simple: ["2", "3"]
