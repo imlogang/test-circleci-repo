@@ -46,7 +46,7 @@ jobs:
           password: $DOCKER_PASSWORD
     steps:
       - checkout
-       - run: echo << matrix.ruby-simple >>
+       - run: echo << parameters.ruby-simple >>
       # - run: echo << parameters.ruby-version >>
 
 
