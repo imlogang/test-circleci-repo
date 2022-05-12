@@ -8,7 +8,8 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: echo $CIRCLE_SHA1
+      - run: echo "export COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
+      - run: echo $COMMIT_MESSAGE
 
 workflows:
   main:
