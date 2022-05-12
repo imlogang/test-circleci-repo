@@ -8,7 +8,7 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: snyk --version
+      - checkout
   test-cimg:
     docker:
       - image: cimg/node:10.18
@@ -16,8 +16,7 @@ jobs:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
     steps:
-      - run: snyk --version
-
+      - checkout
 workflows:
   main:
     jobs:
@@ -25,6 +24,7 @@ workflows:
       - test-cimg
 
 #comments for branch PR
+#adding commit so that it actually runs
 
 
 
