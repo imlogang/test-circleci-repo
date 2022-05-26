@@ -2,14 +2,13 @@ version: 2.1
 
 jobs:
   test-cimg:
-    docker:
-      - image: cimg/node:10.18
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
+    machine:
+      image: ubuntu-2004:202107-02
+        # auth:
+        #   username: $DOCKER_USERNAME
+        #   password: $DOCKER_PASSWORD
     steps:
-      - run: echo "export COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
-      - run: echo $COMMIT_MESSAGE
+      - run: docker version
 
 workflows:
   main:
