@@ -4,7 +4,7 @@ jobs:
   test-cimg:
     macos:
         xcode: 13.4.1
-    resource_class: macos.x86.medium.gen2
+    # resource_class: macos.x86.medium.gen2
         # auth:
         #   username: $DOCKER_USERNAME
         #   password: $DOCKER_PASSWORD
