@@ -1,0 +1,125 @@
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-audience-composition-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-hub-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-hub-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-library-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-measurement-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-organization-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-tactical-planner" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-admin-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-auth-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-measurement-orch" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-dmp-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-rate-card-service" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-digital-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-user-admin-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-planner-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-planner-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-audience-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-dashboard-service" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-bookmark-service" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-allocation-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-mediaocean-hapi" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-measurement-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-shell-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-tactical-planning-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/deals-service" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-api-packages" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/dsp-api-v3" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/dsp-beacon" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-sparkconfig" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vamp-datascience" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc/VideoAmp-admin-api" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-event-data" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/notebook-server-images" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-report-etl" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-allocation" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-mediaocean-etl" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/external-report-api" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vamp-measurement" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/external-report-admin-api" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-authorization-consumer" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/python-environments" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/preamp" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-cleanroom-etl" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/dsp-active-line-item-producer" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-tv-audiences" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/vampy-partner-integrations-etl" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/base_deploy_image" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-measurement-backend" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-phelloworld" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/fc-powerplant" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/marketing-science" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/marketingscience-data-template-engine" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/measurement-app-dev-utils" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mlops_template" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mock-exchange" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mo-ingester" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/monorail" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mfe-config" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/migration-tool" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mleap-util" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/mediaocean-ui" :pr-only-branch-overrides "master, main, stage"
+
+set-project-feature "https://app.circleci.com/pipelines/github/VideoAmp/external-report-tasks" :pr-only-branch-overrides "master, main, stage"

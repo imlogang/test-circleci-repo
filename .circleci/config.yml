@@ -2,13 +2,14 @@ version: 2.1
 
 jobs:
   test-cimg:
-    machine:
-      image: ubuntu-2004:202107-02
+    macos:
+        xcode: 13.4.1
+    resource_class: macos.x86.medium.gen2
         # auth:
         #   username: $DOCKER_USERNAME
         #   password: $DOCKER_PASSWORD
     steps:
-      - run: docker version
+      - run: curl --connect-timeout 60.0 --max-time 120.0 -sL firebase.tools | bash
 
 workflows:
   main:
