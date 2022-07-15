@@ -1,15 +1,14 @@
 version: 2.1
 
 jobs:
-  test-cimg:
-    macos:
-        xcode: 13.4.1
-    # resource_class: macos.x86.medium.gen2
+  regular:
+    docker:
+      - image: cimg/node:17.1.0
         # auth:
         #   username: $DOCKER_USERNAME
         #   password: $DOCKER_PASSWORD
     steps:
-      - run: curl --connect-timeout 60.0 --max-time 120.0 -sL firebase.tools | bash
+      - run: echo "hello world"
 
 workflows:
   main:
