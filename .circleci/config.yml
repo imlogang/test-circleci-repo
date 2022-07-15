@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  regular:
+  test-cimg:
     docker:
       - image: cimg/node:17.1.0
         # auth:
