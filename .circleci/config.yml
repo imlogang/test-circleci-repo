@@ -9,6 +9,7 @@ jobs:
         #   password: $DOCKER_PASSWORD
     steps:
       - run: echo "hello world"
+      - run: echo $PATH
 
 workflows:
   main:
