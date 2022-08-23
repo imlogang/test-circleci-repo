@@ -1,20 +1,27 @@
 version: 2.1
 
+orbs:
+  android: circleci/android@2.1.2
+  flutter-orb: circleci/flutter@1.1.0
+  ruby: circleci/ruby@1.8.0
+
 jobs:
-  test-cimg:
-    docker:
-      - image: cimg/node:17.1.0
-        # auth:
-        #   username: $DOCKER_USERNAME
-        #   password: $DOCKER_PASSWORD
+  build-android:
+    executor:
+      name: android/android-docker
+      resource-class: medium
+      tag: 2022.03.1
+
     steps:
-      - run: echo "hello world"
-      - run: echo $PATH
+      - checkout
+      - flutter-orb/install_sdk_and_pub:
+          cache-version: docker
+          flutter_version: 2.10.3
 
 workflows:
-  main:
+  test-build:
     jobs:
-      - test-cimg
+      - build-android
 
 #comments for branch PR
 #adding commit so that it actually runs
