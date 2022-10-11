@@ -33,6 +33,8 @@ workflows:
   test-build:
     jobs:
       - build-android
+          context:
+            - global
 
 #comments for branch PR
 #adding commit so that it actually runs
