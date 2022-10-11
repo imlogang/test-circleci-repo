@@ -16,6 +16,7 @@ jobs:
             pwd
             echo "*************************"
             cd ..
+            cd ..
             pwd 
             echo "*************************"
             cd circleci/project
