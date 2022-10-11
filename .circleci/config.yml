@@ -7,16 +7,10 @@ orbs:
 
 jobs:
   build-android:
-    executor:
-      name: android/android-docker
-      resource-class: medium
-      tag: 2022.03.1
+    machine: true
 
     steps:
-      - checkout
-      - flutter-orb/install_sdk_and_pub:
-          cache-version: docker
-          flutter_version: 2.10.3
+      - run: echo "hello world"
 
 workflows:
   test-build:
