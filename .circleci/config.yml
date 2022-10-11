@@ -32,7 +32,7 @@ jobs:
 workflows:
   test-build:
     jobs:
-      - build-android
+      - build-android:
           context:
             - global
 
