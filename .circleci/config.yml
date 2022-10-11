@@ -13,20 +13,20 @@ jobs:
       - run: echo "hello world"
       - run:
           command: |
-          pwd
-          echo "*************************"
-          cd ..
-          pwd 
-          echo "*************************"
-          cd circleci/project
-          pwd
-          echo "*************************"
-          cd ..
-          cd ..
-          pwd
-          echo "*************************"
-          cd $CONTEXT_JWT_KEY_FILE_ENC
-          pwd
+            pwd
+            echo "*************************"
+            cd ..
+            pwd 
+            echo "*************************"
+            cd circleci/project
+            pwd
+            echo "*************************"
+            cd ..
+            cd ..
+            pwd
+            echo "*************************"
+            cd $CONTEXT_JWT_KEY_FILE_ENC
+            pwd
 
 
 workflows:
