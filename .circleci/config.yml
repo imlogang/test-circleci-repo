@@ -10,7 +10,7 @@ jobs:
     machine: true
 
     steps:
-      - run: checkout
+      - checkout
       - run: echo "hello world"
       - run:
           command: |
