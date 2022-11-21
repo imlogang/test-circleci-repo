@@ -1,43 +1,14 @@
 version: 2.1
-
-orbs:
-  android: circleci/android@2.1.2
-  flutter-orb: circleci/flutter@1.1.0
-  ruby: circleci/ruby@1.8.0
-
-jobs:
-  build-android:
-    docker:
-      - image: cimg/node:current
-
-    steps:
-      - checkout
-      - run: echo "hello world"
-      - run:
-          command: |
-            pwd
-            echo "*************************"
-            cd ..
-            cd ..
-            pwd 
-            echo "*************************"
-            cd circleci/project
-            pwd
-            echo "*************************"
-            cd ..
-            cd ..
-            pwd
-            echo "*************************"
-            cd $CONTEXT_JWT_KEY_FILE_ENC
-            pwd
-
-
 workflows:
-  test-build:
+  testing:
     jobs:
-      - build-android:
-          context:
-            - global
+      - runner-test
+jobs:
+  runner-test:
+    machine: true
+    resource_class: orb-space/macos-test
+    steps:
+      - run: echo "Hi I'm on Runners!"
 
 #comments for branch PR
 #adding commit so that it actually runs
@@ -261,3 +232,5 @@ workflows:
 # #   #   when: << pipeline.parameters.run_by_api >> # Add condition to execute this workflow when condition-workflow is equal to true
 # #   #   jobs:
 # #   #     - api-job
+
+# VS Code Extension Version: 1.1.1
