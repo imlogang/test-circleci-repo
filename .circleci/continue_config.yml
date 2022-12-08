@@ -1,9 +1,9 @@
 version: 2.1
 
-parameters:
-  testParam:
-    type: string
-    default: "hello"
+# parameters:
+#   testParam:
+#     type: string
+#     default: "hello"
 
 jobs:
   build:
