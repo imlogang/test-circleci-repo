@@ -5,11 +5,18 @@ setup: true
 orbs:
   continuation: circleci/continuation@0.1
 
+parameters:
+  continue_script:
+    description: indicates whether to create a snapshot of data from the target org and store in the repo for sandboxes/scratch-orgs
+    type: string
+    default: main
+
 workflows:
   use-my-orb:
     jobs:
       - continuation/continue:
-          configuration_path: ./continue_config.yml
+          configuration_path: ./.circlci/continue_config.yml
+          parameters: '{"testParam":"John"}'
 
 
 
