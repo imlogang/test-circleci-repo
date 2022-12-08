@@ -1,14 +1,30 @@
 version: 2.1
-workflows:
-  testing:
-    jobs:
-      - runner-test
+
+# this allows you to use CircleCI's dynamic configuration feature
+setup: true
+
+# the continuation orb is required in order to use dynamic configuration
+orbs:
+  continuation: circleci/continuation@0.1.2
+
+# our defined job, and its steps
 jobs:
-  runner-test:
-    machine: true
-    resource_class: orb-space/macos-test
+  setup:
+    executor: continuation/default
     steps:
-      - run: echo "Hi I'm on Runners!"
+      - checkout # checkout code
+      - run: # run a command
+          name: Generate config
+          command: |
+            ./generate-config > generated_config.yml
+      - continuation/continue:
+          configuration_path: generated_config.yml # use newly generated config to continue
+
+# our single workflow, that triggers the setup job defined above
+workflows:
+  setup:
+    jobs:
+      - setup
 
 #comments for branch PR
 #adding commit so that it actually runs
@@ -233,4 +249,4 @@ jobs:
 # #   #   jobs:
 # #   #     - api-job
 
-# VS Code Extension Version: 1.1.1
+# VS Code Extension Version: 1.4.0
