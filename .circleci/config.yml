@@ -15,7 +15,7 @@ workflows:
   use-my-orb:
     jobs:
       - continuation/continue:
-          configuration_path: ./.circlci/continue_config.yml
+          configuration_path: ./.circleci/continue_config.yml
           parameters: '{"testParam":"John"}'
 
 
