@@ -10,7 +10,11 @@ workflows:
     jobs:
       - continuation/continue:
           configuration_path: ./.circleci/continue_config.yml
-          parameters: '{"testParam":"$CIRCLE_USERNAME"}'
+          parameters: /home/circleci/parameters.json
+          pre-steps:
+            - run:
+                command: |
+                  echo '{ "testParam": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json
 
 
 
