@@ -1,9 +1,9 @@
 version: 2.1
 
-# parameters:
-#   testParam:
-#     type: string
-#     default: "hello"
+parameters:
+  testParam:
+    type: string
+    default: "not_hudcode"
 
 jobs:
   build:
@@ -15,5 +15,13 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+
+workflows:
+  continue_workflow:
+    when: 
+      and:
+        - equal: [ "hud-code", << pipeline.parameters.testParam >> ]
+    jobs:
+     - build
 
 # VS Code Extension Version: 1.4.0
