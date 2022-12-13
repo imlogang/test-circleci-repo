@@ -14,7 +14,7 @@ workflows:
           pre-steps:
             - run:
                 command: |
-                  echo '{ "testParam": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json
+                  echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json
 
 
 

@@ -1,9 +1,9 @@
 version: 2.1
 
 parameters:
-  testParam:
+  author:
     type: string
-    default: "not_hudcode"
+    default: "not_username"
 
 jobs:
   build:
@@ -15,13 +15,13 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-            echo << pipeline.parameters.testParam >>
+            echo << pipeline.parameters.author >>
 
 workflows:
   continue_workflow:
     when: 
       and:
-        - equal: [ "hud-code", << pipeline.parameters.testParam >> ]
+        - equal: [ "username", << pipeline.parameters.author >> ]
     jobs:
      - build
 
