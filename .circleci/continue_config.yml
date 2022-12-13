@@ -21,7 +21,8 @@ workflows:
   continue_workflow:
     when: 
       and:
-        - equal: [ "username", << pipeline.parameters.author >> ]
+        - not: 
+          - equal: [ "username", << pipeline.parameters.author >> ]
     jobs:
      - build
 
