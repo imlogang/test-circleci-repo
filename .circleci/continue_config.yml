@@ -22,7 +22,7 @@ workflows:
     when: 
       and:
         - not: 
-          - equal: [ "username", << pipeline.parameters.author >> ]
+            equal: [ "rbi-bot", << pipeline.parameters.author >> ]
     jobs:
      - build
 
