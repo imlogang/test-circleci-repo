@@ -11,11 +11,10 @@ jobs:
       - image: cimg/base:2022.12
     steps:
       - run:
-      - run:
-          name: Create Files to checksum for cache keys
           command: |
-          echo "1000" > CACHE_VERSION
-          date +%Y-week-%U > CACHE_WEEKNUMBER
+            echo "1000" > CACHE_VERSION
+            date +%Y-week-%U > CACHE_WEEKNUMBER
+          name: Create Files to checksum for cache keys
 
 workflows:
   continue_workflow:
