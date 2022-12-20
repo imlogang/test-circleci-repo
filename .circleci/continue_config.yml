@@ -11,18 +11,18 @@ jobs:
       - image: cimg/base:2022.12
     steps:
       - run:
-          name: The First Step
+      - run:
+          name: Create Files to checksum for cache keys
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-            echo << pipeline.parameters.author >>
+          echo "1000" > CACHE_VERSION
+          date +%Y-week-%U > CACHE_WEEKNUMBER
 
 workflows:
   continue_workflow:
     when: 
       and:
         - not: 
-            equal: [ "hud-code", << pipeline.parameters.author >> ]
+            equal: [ "rbi-bot", << pipeline.parameters.author >> ]
     jobs:
      - build
 

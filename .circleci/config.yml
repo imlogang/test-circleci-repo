@@ -14,7 +14,8 @@ workflows:
           pre-steps:
             - run:
                 command: |
-                  echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json
+                  echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json 
+# < we can't directly insert the env var into the parameters value
 
 
 
