@@ -8,7 +8,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.3.7
+      - image: cimg/ruby:2.3.7
     steps:
       - run:
           name: "Install ruby"
