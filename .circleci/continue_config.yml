@@ -9,6 +9,7 @@ jobs:
   build:
     docker:
       - image: cimg/ruby:2.7.6
+    steps:
       - run:
           name: "Install ruby"
           command: gem install bundler  && bundle install  
