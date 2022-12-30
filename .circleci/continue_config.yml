@@ -8,13 +8,11 @@ parameters:
 jobs:
   build:
     docker:
-      - image: cimg/base:2022.12
+      - image: circleci/ruby:2.3.7
     steps:
       - run:
-          command: |
-            echo "1000" > CACHE_VERSION
-            date +%Y-week-%U > CACHE_WEEKNUMBER
-          name: Create Files to checksum for cache keys
+          name: "Install ruby"
+          command: gem install bundler  && bundle install  
 
 workflows:
   continue_workflow:
@@ -25,4 +23,4 @@ workflows:
     jobs:
      - build
 
-# VS Code Extension Version: 1.4.0
+# VS Code Extension Version: 1.5.1
