@@ -7,7 +7,7 @@ orbs:
 
 docker_node: &docker_node
   docker:
-    - image: cimg/base:current
+    - image: cimg/node:current
 
 dynamic_setup: &dynamic_setup 
   <<: *docker_node
@@ -33,7 +33,7 @@ jobs:
     <<: *dynamic_setup
 
 workflows:
-  use-my-orb:
+  setup:
     jobs:
       - setup
 # < we can't directly insert the env var into the parameters value
