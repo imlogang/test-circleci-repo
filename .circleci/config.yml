@@ -11,6 +11,7 @@ workflows:
       - continuation/continue:
           configuration_path: ./.circleci/continue_config.yml
           parameters: /home/circleci/parameters.json
+          circleci_domain: gcp.logangodsey.com
           pre-steps:
             - run:
                 command: |
