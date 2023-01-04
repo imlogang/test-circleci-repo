@@ -5,9 +5,14 @@ setup: true
 orbs:
   continuation: circleci/continuation@0.3.1
 
-workflows:
-  use-my-orb:
-    jobs:
+jobs:
+  setup:
+      - run:
+        name: "Setting continuation paramters"
+        command: |
+          echo "extra_parameters='{ \"affected_projects\" : \"$AFFECTED_PROJECTS\", \"nx_base\" : \"$NX_BASE\", \"nx_head\" : \"$NX_HEAD\" }'" >> $BASH_ENV
+          source $BASH_ENV
+          echo $extra_parameters
       - continuation/continue:
           configuration_path: ./.circleci/continue_config.yml
           parameters: /home/circleci/parameters.json
@@ -16,6 +21,12 @@ workflows:
             - run:
                 command: |
                   echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json 
+
+
+workflows:
+  use-my-orb:
+    jobs:
+      - setup
 # < we can't directly insert the env var into the parameters value
 
 
