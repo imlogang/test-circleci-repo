@@ -5,9 +5,10 @@ setup: true
 orbs:
   continuation: circleci/continuation@0.3.1
 
-jobs:
-  setup:
-    steps:
+dynamic_setup: &dynamic_setup 
+  <<: *docker_node
+  steps:
+      - checkout
       - run:
           name: "Setting continuation paramters"
           command: |
@@ -22,6 +23,11 @@ jobs:
               - run:
                   command: |
                     echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json 
+
+jobs:
+  setup:
+    <<: *dynamic_setup
+
 workflows:
   use-my-orb:
     jobs:
