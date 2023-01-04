@@ -23,10 +23,6 @@ dynamic_setup: &dynamic_setup
             configuration_path: ./.circleci/continue_config.yml
             parameters: /home/circleci/parameters.json
             circleci_domain: gcp.logangodsey.com
-            pre-steps:
-              - run:
-                  command: |
-                    echo '{ "author": "'$CIRCLE_USERNAME'" }' >> /home/circleci/parameters.json 
 
 jobs:
   setup:
