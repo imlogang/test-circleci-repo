@@ -7,13 +7,13 @@ orbs:
 
 jobs:
   setup:
-      - run:
+    - run:
         name: "Setting continuation paramters"
         command: |
           echo "extra_parameters='{ \"affected_projects\" : \"$AFFECTED_PROJECTS\", \"nx_base\" : \"$NX_BASE\", \"nx_head\" : \"$NX_HEAD\" }'" >> $BASH_ENV
           source $BASH_ENV
           echo $extra_parameters
-      - continuation/continue:
+    - continuation/continue:
           configuration_path: ./.circleci/continue_config.yml
           parameters: /home/circleci/parameters.json
           circleci_domain: gcp.logangodsey.com
